@@ -1,6 +1,6 @@
 ﻿namespace doceria
 {
-    partial class F1
+    partial class pagecadastro
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -136,7 +136,7 @@
             this.btSair.UseVisualStyleBackColor = true;
             this.btSair.Click += new System.EventHandler(this.button2_Click);
             // 
-            // F1
+            // pagecadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -152,7 +152,7 @@
             this.Controls.Add(this.btCad);
             this.Controls.Add(this.btEnter);
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Name = "F1";
+            this.Name = "pagecadastro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace doceria
 {
-    public partial class F1 : Form
+    public partial class pagecadastro : Form
     {
-        public F1()
+        public pagecadastro()
         {
             InitializeComponent();
         }

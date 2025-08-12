@@ -28,47 +28,50 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.btnome = new System.Windows.Forms.TextBox();
+            this.bttcpf = new System.Windows.Forms.MaskedTextBox();
+            this.bttelefone = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.btemail = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
+            this.bttdata = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btConcluir = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btsenha = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // btnome
             // 
-            this.textBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox1.Location = new System.Drawing.Point(32, 139);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(285, 20);
-            this.textBox1.TabIndex = 0;
+            this.btnome.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnome.Location = new System.Drawing.Point(32, 139);
+            this.btnome.Name = "btnome";
+            this.btnome.Size = new System.Drawing.Size(285, 20);
+            this.btnome.TabIndex = 0;
+            this.btnome.TextChanged += new System.EventHandler(this.btnome_TextChanged);
             // 
-            // maskedTextBox1
+            // bttcpf
             // 
-            this.maskedTextBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.maskedTextBox1.Location = new System.Drawing.Point(77, 208);
-            this.maskedTextBox1.Mask = "000,000,000-00";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(85, 20);
-            this.maskedTextBox1.TabIndex = 4;
+            this.bttcpf.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.bttcpf.Location = new System.Drawing.Point(32, 196);
+            this.bttcpf.Mask = "000,000,000-00";
+            this.bttcpf.Name = "bttcpf";
+            this.bttcpf.Size = new System.Drawing.Size(85, 20);
+            this.bttcpf.TabIndex = 4;
             // 
-            // maskedTextBox2
+            // bttelefone
             // 
-            this.maskedTextBox2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.maskedTextBox2.Location = new System.Drawing.Point(346, 208);
-            this.maskedTextBox2.Mask = "(00)000000000";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(78, 20);
-            this.maskedTextBox2.TabIndex = 5;
-            this.maskedTextBox2.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox2_MaskInputRejected);
+            this.bttelefone.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.bttelefone.Location = new System.Drawing.Point(32, 256);
+            this.bttelefone.Mask = "(00)000000000";
+            this.bttelefone.Name = "bttelefone";
+            this.bttelefone.Size = new System.Drawing.Size(78, 20);
+            this.bttelefone.TabIndex = 5;
+            this.bttelefone.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox2_MaskInputRejected);
             // 
             // label1
             // 
@@ -91,13 +94,14 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // textBox2
+            // btemail
             // 
-            this.textBox2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox2.Location = new System.Drawing.Point(483, 143);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(295, 20);
-            this.textBox2.TabIndex = 8;
+            this.btemail.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btemail.Location = new System.Drawing.Point(483, 143);
+            this.btemail.Name = "btemail";
+            this.btemail.Size = new System.Drawing.Size(295, 20);
+            this.btemail.TabIndex = 8;
+            this.btemail.TextChanged += new System.EventHandler(this.textBox2_TextChanged_1);
             // 
             // label2
             // 
@@ -116,7 +120,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(73, 182);
+            this.label3.Location = new System.Drawing.Point(28, 171);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 22);
             this.label3.TabIndex = 10;
@@ -127,20 +131,20 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(343, 182);
+            this.label4.Location = new System.Drawing.Point(28, 231);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(81, 22);
             this.label4.TabIndex = 11;
             this.label4.Text = "telefone:";
             // 
-            // maskedTextBox3
+            // bttdata
             // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(613, 208);
-            this.maskedTextBox3.Mask = "00/00/0000";
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(68, 20);
-            this.maskedTextBox3.TabIndex = 12;
-            this.maskedTextBox3.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox3_MaskInputRejected);
+            this.bttdata.Location = new System.Drawing.Point(613, 207);
+            this.bttdata.Mask = "00/00/0000";
+            this.bttdata.Name = "bttdata";
+            this.bttdata.Size = new System.Drawing.Size(68, 20);
+            this.bttdata.TabIndex = 12;
+            this.bttdata.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox3_MaskInputRejected);
             // 
             // label5
             // 
@@ -166,6 +170,25 @@
             this.btConcluir.UseVisualStyleBackColor = true;
             this.btConcluir.Click += new System.EventHandler(this.btConcluir_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Image = global::doceria.Properties.Resources.Design_sem_nome;
+            this.label6.Location = new System.Drawing.Point(609, 244);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(56, 19);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "SENHA";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // btsenha
+            // 
+            this.btsenha.Location = new System.Drawing.Point(613, 266);
+            this.btsenha.Name = "btsenha";
+            this.btsenha.Size = new System.Drawing.Size(93, 20);
+            this.btsenha.TabIndex = 16;
+            // 
             // PageCad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -173,17 +196,19 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.BackgroundImage = global::doceria.Properties.Resources.Design_sem_nome;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btsenha);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.btConcluir);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.maskedTextBox3);
+            this.Controls.Add(this.bttdata);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.btemail);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.maskedTextBox2);
-            this.Controls.Add(this.maskedTextBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.bttelefone);
+            this.Controls.Add(this.bttcpf);
+            this.Controls.Add(this.btnome);
             this.Controls.Add(this.pictureBox1);
             this.Name = "PageCad";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -196,17 +221,19 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.TextBox btnome;
+        private System.Windows.Forms.MaskedTextBox bttcpf;
+        private System.Windows.Forms.MaskedTextBox bttelefone;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox btemail;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
+        private System.Windows.Forms.MaskedTextBox bttdata;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btConcluir;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.MaskedTextBox btsenha;
     }
 }
