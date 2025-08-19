@@ -42,9 +42,10 @@
             this.btenter2.BackgroundImage = global::doceria.Properties.Resources.Design_sem_nome__1_;
             this.btenter2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btenter2.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btenter2.Location = new System.Drawing.Point(278, 356);
+            this.btenter2.Location = new System.Drawing.Point(277, 359);
+            this.btenter2.Margin = new System.Windows.Forms.Padding(5, 3, 3, 3);
             this.btenter2.Name = "btenter2";
-            this.btenter2.Size = new System.Drawing.Size(274, 82);
+            this.btenter2.Size = new System.Drawing.Size(235, 65);
             this.btenter2.TabIndex = 0;
             this.btenter2.Text = "entrar";
             this.btenter2.UseVisualStyleBackColor = true;
@@ -53,7 +54,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::doceria.Properties.Resources.Logotipo_Doceria_Minimalista_Marrom_e_Rosa;
-            this.pictureBox1.Location = new System.Drawing.Point(138, -103);
+            this.pictureBox1.Location = new System.Drawing.Point(147, -103);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(473, 417);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -62,15 +63,15 @@
             // 
             // bttemail
             // 
-            this.bttemail.Location = new System.Drawing.Point(119, 320);
+            this.bttemail.Location = new System.Drawing.Point(89, 317);
             this.bttemail.Name = "bttemail";
-            this.bttemail.Size = new System.Drawing.Size(288, 20);
+            this.bttemail.Size = new System.Drawing.Size(246, 20);
             this.bttemail.TabIndex = 2;
             this.bttemail.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // btsenha
             // 
-            this.btsenha.Location = new System.Drawing.Point(435, 317);
+            this.btsenha.Location = new System.Drawing.Point(449, 317);
             this.btsenha.Name = "btsenha";
             this.btsenha.PasswordChar = '*';
             this.btsenha.Size = new System.Drawing.Size(222, 20);
@@ -81,7 +82,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Image = global::doceria.Properties.Resources.Design_sem_nome;
-            this.label1.Location = new System.Drawing.Point(115, 295);
+            this.label1.Location = new System.Drawing.Point(85, 295);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 19);
             this.label1.TabIndex = 5;
@@ -92,7 +93,7 @@
             this.senhaenter.AutoSize = true;
             this.senhaenter.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.senhaenter.Image = global::doceria.Properties.Resources.Design_sem_nome;
-            this.senhaenter.Location = new System.Drawing.Point(431, 295);
+            this.senhaenter.Location = new System.Drawing.Point(445, 295);
             this.senhaenter.Name = "senhaenter";
             this.senhaenter.Size = new System.Drawing.Size(56, 19);
             this.senhaenter.TabIndex = 7;

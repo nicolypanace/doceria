@@ -14,9 +14,13 @@ namespace doceria
 {
     public partial class PageCad : Form
     {
-        public PageCad()
+        public PageCad(PageCad pageCad)
         {
             InitializeComponent();
+        }
+
+        public PageCad()
+        {
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -47,7 +51,7 @@ namespace doceria
             string query = "INSERT INTO USUARIO VALUES (@nome,@cpf, @telefone, @data, @email, @senha)";
 
 
-    try
+            try
             {
                 using (SqlConnection conexao = new SqlConnection(conexaoString))
                 {
@@ -91,7 +95,7 @@ namespace doceria
             PageMenu pageMenu = new PageMenu();
             pageMenu.ShowDialog();
         }
-        
+
         private void maskedTextBox3_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
@@ -104,7 +108,7 @@ namespace doceria
 
         private void textBox2_TextChanged_1(object sender, EventArgs e)
         {
-        
+
 
         }
 
@@ -117,5 +121,16 @@ namespace doceria
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PageCad_Load(object sender, EventArgs e)
+        {
+
+        }
     }
+
 }

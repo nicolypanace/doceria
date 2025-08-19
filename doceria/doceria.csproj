@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -52,6 +53,7 @@
     <Compile Include="FrInicio.Designer.cs">
       <DependentUpon>FrInicio.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrInicio1.cs" />
     <Compile Include="PageCad.cs">
       <SubType>Form</SubType>
     </Compile>

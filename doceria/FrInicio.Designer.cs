@@ -143,7 +143,7 @@
             this.BackColor = System.Drawing.Color.Peru;
             this.BackgroundImage = global::doceria.Properties.Resources.Design_sem_nome;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(797, 460);
             this.Controls.Add(this.btSair);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox1);
