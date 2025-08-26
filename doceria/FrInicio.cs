@@ -53,5 +53,10 @@ namespace doceria
             PageLogin pageLogin = new PageLogin();
             pageLogin.ShowDialog();
         }
+
+        private void pagecadastro_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

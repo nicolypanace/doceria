@@ -83,9 +83,89 @@ namespace doceria.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Design_sem_nome__3_ {
+            get {
+                object obj = ResourceManager.GetObject("Design sem nome (3)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Design_sem_nome__3_1 {
+            get {
+                object obj = ResourceManager.GetObject("Design sem nome (3)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Design_sem_nome__4_ {
+            get {
+                object obj = ResourceManager.GetObject("Design sem nome (4)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Design_sem_nome__5_ {
+            get {
+                object obj = ResourceManager.GetObject("Design sem nome (5)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Design_sem_nome__6_ {
+            get {
+                object obj = ResourceManager.GetObject("Design sem nome (6)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Design_sem_nome__7_ {
+            get {
+                object obj = ResourceManager.GetObject("Design sem nome (7)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap e5f7f9ad56edfa82711526aa315fed26 {
+            get {
+                object obj = ResourceManager.GetObject("e5f7f9ad56edfa82711526aa315fed26", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Logotipo_Doceria_Minimalista_Marrom_e_Rosa {
             get {
                 object obj = ResourceManager.GetObject("Logotipo Doceria Minimalista Marrom e Rosa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pastry_Donuts_Closeup_White_background_527218_2560x1440 {
+            get {
+                object obj = ResourceManager.GetObject("Pastry_Donuts_Closeup_White_background_527218_2560x1440", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
