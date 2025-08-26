@@ -26,5 +26,31 @@ namespace doceria
         {
 
         }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label41_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label37_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label32_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void butcarrinho_Click(object sender, EventArgs e)
+        {
+            PageSelect pageSelect = new PageSelect();
+            pageSelect.ShowDialog();
+        }
     }
 }

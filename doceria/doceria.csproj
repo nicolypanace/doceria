@@ -72,6 +72,12 @@
     <Compile Include="PageMenu.Designer.cs">
       <DependentUpon>PageMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="PageSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PageSelect.Designer.cs">
+      <DependentUpon>PageSelect.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrInicio.resx">
@@ -85,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PageMenu.resx">
       <DependentUpon>PageMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageSelect.resx">
+      <DependentUpon>PageSelect.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
