@@ -44,8 +44,8 @@ namespace doceria
 
         private void btCad_Click(object sender, EventArgs e)
         {
-            PageCad pageCad = new PageCad();
-            pageCad.ShowDialog();
+            PageCadr pageCadr = new PageCadr();
+            pageCadr.ShowDialog();
         }
 
         private void bt1_Click(object sender, EventArgs e)
