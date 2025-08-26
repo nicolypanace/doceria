@@ -95,7 +95,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(322, 9);
+            this.label1.Location = new System.Drawing.Point(296, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(215, 26);
             this.label1.TabIndex = 0;
@@ -124,6 +124,7 @@
             this.label3.Size = new System.Drawing.Size(122, 22);
             this.label3.TabIndex = 2;
             this.label3.Text = "BRIGADEIROS";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -135,6 +136,7 @@
             this.label4.Size = new System.Drawing.Size(82, 22);
             this.label4.TabIndex = 3;
             this.label4.Text = "DONUTS";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // butcarrinho
             // 
@@ -161,6 +163,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(206, 251);
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pictureBox2
             // 
@@ -170,6 +173,7 @@
             this.pictureBox2.Size = new System.Drawing.Size(224, 251);
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox3
             // 
@@ -179,6 +183,7 @@
             this.pictureBox3.Size = new System.Drawing.Size(220, 251);
             this.pictureBox3.TabIndex = 7;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // pictureBox6
             // 
@@ -188,6 +193,7 @@
             this.pictureBox6.Size = new System.Drawing.Size(93, 60);
             this.pictureBox6.TabIndex = 10;
             this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
             // pictureBox5
             // 
@@ -197,6 +203,7 @@
             this.pictureBox5.Size = new System.Drawing.Size(88, 69);
             this.pictureBox5.TabIndex = 11;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // label5
             // 
@@ -208,6 +215,7 @@
             this.label5.Size = new System.Drawing.Size(137, 16);
             this.label5.TabIndex = 12;
             this.label5.Text = "VALOR UNITÁRIO: 2,00";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
@@ -219,6 +227,7 @@
             this.label6.Size = new System.Drawing.Size(321, 16);
             this.label6.TabIndex = 13;
             this.label6.Text = "Encomendas com mais unidades, comunicar via whatsapp.";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
@@ -230,6 +239,7 @@
             this.label7.Size = new System.Drawing.Size(190, 16);
             this.label7.TabIndex = 14;
             this.label7.Text = "CAIXA COM 10 UNIDADES: 18,00";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
@@ -241,6 +251,7 @@
             this.label8.Size = new System.Drawing.Size(60, 16);
             this.label8.TabIndex = 15;
             this.label8.Text = "SABORES";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label9
             // 
@@ -252,6 +263,7 @@
             this.label9.Size = new System.Drawing.Size(130, 16);
             this.label9.TabIndex = 16;
             this.label9.Text = "- Chocolate tradicional";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // pictureBox4
             // 
@@ -261,6 +273,7 @@
             this.pictureBox4.Size = new System.Drawing.Size(97, 60);
             this.pictureBox4.TabIndex = 8;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // pictureBox7
             // 
@@ -270,6 +283,7 @@
             this.pictureBox7.Size = new System.Drawing.Size(476, 443);
             this.pictureBox7.TabIndex = 17;
             this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
             // 
             // label10
             // 
@@ -281,6 +295,7 @@
             this.label10.Size = new System.Drawing.Size(75, 16);
             this.label10.TabIndex = 18;
             this.label10.Text = "- Amendoim";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label11
             // 
@@ -292,6 +307,7 @@
             this.label11.Size = new System.Drawing.Size(60, 16);
             this.label11.TabIndex = 19;
             this.label11.Text = "- Pistache";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label12
             // 
@@ -303,6 +319,7 @@
             this.label12.Size = new System.Drawing.Size(65, 16);
             this.label12.TabIndex = 20;
             this.label12.Text = "- morango";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // label13
             // 
@@ -314,6 +331,7 @@
             this.label13.Size = new System.Drawing.Size(218, 16);
             this.label13.TabIndex = 21;
             this.label13.Text = "- Brigadeiro branco (chocolate branco)";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // label14
             // 
@@ -337,6 +355,7 @@
             this.label15.Size = new System.Drawing.Size(54, 16);
             this.label15.TabIndex = 23;
             this.label15.Text = "- Cocada";
+            this.label15.Click += new System.EventHandler(this.label15_Click);
             // 
             // label16
             // 
@@ -348,6 +367,7 @@
             this.label16.Size = new System.Drawing.Size(48, 16);
             this.label16.TabIndex = 24;
             this.label16.Text = "- Limão";
+            this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // label17
             // 
@@ -359,6 +379,7 @@
             this.label17.Size = new System.Drawing.Size(60, 16);
             this.label17.TabIndex = 25;
             this.label17.Text = "SABORES";
+            this.label17.Click += new System.EventHandler(this.label17_Click);
             // 
             // label18
             // 
@@ -369,6 +390,7 @@
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(0, 16);
             this.label18.TabIndex = 26;
+            this.label18.Click += new System.EventHandler(this.label18_Click);
             // 
             // label19
             // 
@@ -380,6 +402,7 @@
             this.label19.Size = new System.Drawing.Size(82, 16);
             this.label19.TabIndex = 27;
             this.label19.Text = "- Sem recheio";
+            this.label19.Click += new System.EventHandler(this.label19_Click);
             // 
             // label20
             // 
@@ -391,6 +414,7 @@
             this.label20.Size = new System.Drawing.Size(119, 16);
             this.label20.TabIndex = 28;
             this.label20.Text = "- Chocolate (ao leite)";
+            this.label20.Click += new System.EventHandler(this.label20_Click);
             // 
             // label21
             // 
@@ -402,6 +426,7 @@
             this.label21.Size = new System.Drawing.Size(107, 16);
             this.label21.TabIndex = 29;
             this.label21.Text = "- Frutas vermelhas";
+            this.label21.Click += new System.EventHandler(this.label21_Click);
             // 
             // label22
             // 
@@ -413,6 +438,7 @@
             this.label22.Size = new System.Drawing.Size(48, 16);
             this.label22.TabIndex = 30;
             this.label22.Text = "- Limão";
+            this.label22.Click += new System.EventHandler(this.label22_Click);
             // 
             // label23
             // 
@@ -424,6 +450,7 @@
             this.label23.Size = new System.Drawing.Size(57, 16);
             this.label23.TabIndex = 31;
             this.label23.Text = "- Abacaxi";
+            this.label23.Click += new System.EventHandler(this.label23_Click);
             // 
             // label24
             // 
@@ -435,6 +462,7 @@
             this.label24.Size = new System.Drawing.Size(53, 16);
             this.label24.TabIndex = 32;
             this.label24.Text = "- Paçoca";
+            this.label24.Click += new System.EventHandler(this.label24_Click);
             // 
             // label25
             // 
@@ -446,6 +474,7 @@
             this.label25.Size = new System.Drawing.Size(50, 16);
             this.label25.TabIndex = 33;
             this.label25.Text = "- Creme";
+            this.label25.Click += new System.EventHandler(this.label25_Click);
             // 
             // label26
             // 
@@ -457,6 +486,7 @@
             this.label26.Size = new System.Drawing.Size(42, 16);
             this.label26.TabIndex = 34;
             this.label26.Text = "- Coco";
+            this.label26.Click += new System.EventHandler(this.label26_Click);
             // 
             // label27
             // 
@@ -468,6 +498,7 @@
             this.label27.Size = new System.Drawing.Size(137, 16);
             this.label27.TabIndex = 35;
             this.label27.Text = "VALOR UNITÁRIO: 7,00";
+            this.label27.Click += new System.EventHandler(this.label27_Click);
             // 
             // label28
             // 
@@ -479,6 +510,7 @@
             this.label28.Size = new System.Drawing.Size(190, 16);
             this.label28.TabIndex = 36;
             this.label28.Text = "CAIXA COM 10 UNIDADES: 62,00";
+            this.label28.Click += new System.EventHandler(this.label28_Click);
             // 
             // label29
             // 
@@ -490,6 +522,7 @@
             this.label29.Size = new System.Drawing.Size(97, 16);
             this.label29.TabIndex = 37;
             this.label29.Text = "BOLOS SIMPLES";
+            this.label29.Click += new System.EventHandler(this.label29_Click);
             // 
             // label30
             // 
@@ -501,6 +534,7 @@
             this.label30.Size = new System.Drawing.Size(76, 16);
             this.label30.TabIndex = 38;
             this.label30.Text = "RECHEADOS";
+            this.label30.Click += new System.EventHandler(this.label30_Click);
             // 
             // label31
             // 
@@ -512,6 +546,7 @@
             this.label31.Size = new System.Drawing.Size(60, 16);
             this.label31.TabIndex = 39;
             this.label31.Text = "SABORES";
+            this.label31.Click += new System.EventHandler(this.label31_Click);
             // 
             // label32
             // 
@@ -535,6 +570,7 @@
             this.label33.Size = new System.Drawing.Size(54, 16);
             this.label33.TabIndex = 41;
             this.label33.Text = "- Laranja";
+            this.label33.Click += new System.EventHandler(this.label33_Click);
             // 
             // label34
             // 
@@ -546,6 +582,7 @@
             this.label34.Size = new System.Drawing.Size(65, 16);
             this.label34.TabIndex = 42;
             this.label34.Text = "- Sensação";
+            this.label34.Click += new System.EventHandler(this.label34_Click);
             // 
             // label35
             // 
@@ -557,6 +594,7 @@
             this.label35.Size = new System.Drawing.Size(63, 16);
             this.label35.TabIndex = 43;
             this.label35.Text = "- Prestígio";
+            this.label35.Click += new System.EventHandler(this.label35_Click);
             // 
             // label36
             // 
@@ -568,6 +606,7 @@
             this.label36.Size = new System.Drawing.Size(152, 16);
             this.label36.TabIndex = 44;
             this.label36.Text = "VALOR UNITAÁRIO: 16,00";
+            this.label36.Click += new System.EventHandler(this.label36_Click);
             // 
             // label37
             // 
@@ -591,6 +630,7 @@
             this.label38.Size = new System.Drawing.Size(58, 16);
             this.label38.TabIndex = 46;
             this.label38.Text = "- Churros";
+            this.label38.Click += new System.EventHandler(this.label38_Click);
             // 
             // label39
             // 
@@ -602,6 +642,7 @@
             this.label39.Size = new System.Drawing.Size(210, 16);
             this.label39.TabIndex = 47;
             this.label39.Text = "CONSULTAR VALOR VIA WHATSAPP";
+            this.label39.Click += new System.EventHandler(this.label39_Click);
             // 
             // label40
             // 
@@ -613,6 +654,7 @@
             this.label40.Size = new System.Drawing.Size(46, 16);
             this.label40.TabIndex = 48;
             this.label40.Text = "- Milho";
+            this.label40.Click += new System.EventHandler(this.label40_Click);
             // 
             // label41
             // 
@@ -636,6 +678,7 @@
             this.label42.Size = new System.Drawing.Size(69, 16);
             this.label42.TabIndex = 50;
             this.label42.Text = "- Chocolate";
+            this.label42.Click += new System.EventHandler(this.label42_Click);
             // 
             // label43
             // 
@@ -647,6 +690,7 @@
             this.label43.Size = new System.Drawing.Size(60, 16);
             this.label43.TabIndex = 51;
             this.label43.Text = "- Cenoura";
+            this.label43.Click += new System.EventHandler(this.label43_Click);
             // 
             // label44
             // 
@@ -658,6 +702,7 @@
             this.label44.Size = new System.Drawing.Size(111, 16);
             this.label44.TabIndex = 52;
             this.label44.Text = "PERSONALIZADOS";
+            this.label44.Click += new System.EventHandler(this.label44_Click);
             // 
             // label45
             // 
@@ -669,6 +714,7 @@
             this.label45.Size = new System.Drawing.Size(97, 16);
             this.label45.TabIndex = 53;
             this.label45.Text = "(12)00000-0000";
+            this.label45.Click += new System.EventHandler(this.label45_Click);
             // 
             // PageMenu
             // 
