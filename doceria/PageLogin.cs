@@ -48,8 +48,8 @@ namespace doceria
 
                     if (count > 0)
                     {
-                        PageMenu pageMenu = new PageMenu();
-                        pageMenu.ShowDialog();
+                        PageSelect pageSelect = new PageSelect();
+                        pageSelect.ShowDialog();
                     }
                     else
                     {

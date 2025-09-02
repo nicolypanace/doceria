@@ -72,8 +72,8 @@ namespace doceria
             bttdata.Clear();
             btsenha.Clear();
 
-            PageMenu pageMenu = new PageMenu();
-            pageMenu.ShowDialog();
+            PageSelect pageSelect = new PageSelect();
+            pageSelect.ShowDialog();
         }
 
         private void label2_Click(object sender, EventArgs e)

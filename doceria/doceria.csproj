@@ -54,11 +54,29 @@
       <DependentUpon>FrInicio.cs</DependentUpon>
     </Compile>
     <Compile Include="FrInicio1.cs" />
+    <Compile Include="PageBolos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PageBolos.Designer.cs">
+      <DependentUpon>PageBolos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PageBrigadeiro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PageBrigadeiro.Designer.cs">
+      <DependentUpon>PageBrigadeiro.cs</DependentUpon>
+    </Compile>
     <Compile Include="PageCadr.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PageCadr.Designer.cs">
       <DependentUpon>PageCadr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PageDonuts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PageDonuts.Designer.cs">
+      <DependentUpon>PageDonuts.cs</DependentUpon>
     </Compile>
     <Compile Include="PageLogin.cs">
       <SubType>Form</SubType>
@@ -83,8 +101,17 @@
     <EmbeddedResource Include="FrInicio.resx">
       <DependentUpon>FrInicio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PageBolos.resx">
+      <DependentUpon>PageBolos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageBrigadeiro.resx">
+      <DependentUpon>PageBrigadeiro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PageCadr.resx">
       <DependentUpon>PageCadr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageDonuts.resx">
+      <DependentUpon>PageDonuts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PageLogin.resx">
       <DependentUpon>PageLogin.cs</DependentUpon>
