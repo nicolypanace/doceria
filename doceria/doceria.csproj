@@ -84,12 +84,6 @@
     <Compile Include="PageLogin.Designer.cs">
       <DependentUpon>PageLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="PageMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PageMenu.Designer.cs">
-      <DependentUpon>PageMenu.cs</DependentUpon>
-    </Compile>
     <Compile Include="PageSelect.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,9 +109,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PageLogin.resx">
       <DependentUpon>PageLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PageMenu.resx">
-      <DependentUpon>PageMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PageSelect.resx">
       <DependentUpon>PageSelect.cs</DependentUpon>

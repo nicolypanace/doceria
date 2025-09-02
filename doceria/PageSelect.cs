@@ -46,5 +46,10 @@ namespace doceria
             PageDonuts pageDonuts = new PageDonuts();
             pageDonuts.ShowDialog();
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
