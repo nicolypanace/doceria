@@ -41,12 +41,12 @@
             // btCad
             // 
             this.btCad.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btCad.Font = new System.Drawing.Font("SuperFrench", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.btCad.Font = new System.Drawing.Font("SuperFrench", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.btCad.ForeColor = System.Drawing.Color.Black;
             this.btCad.Image = global::doceria.Properties.Resources.Design_sem_nome__1_;
-            this.btCad.Location = new System.Drawing.Point(251, 360);
+            this.btCad.Location = new System.Drawing.Point(674, 14);
             this.btCad.Name = "btCad";
-            this.btCad.Size = new System.Drawing.Size(284, 78);
+            this.btCad.Size = new System.Drawing.Size(111, 27);
             this.btCad.TabIndex = 1;
             this.btCad.Text = "CADASTRAR";
             this.btCad.UseVisualStyleBackColor = true;
@@ -56,12 +56,12 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label2.Image = global::doceria.Properties.Resources.Design_sem_nome;
-            this.label2.Location = new System.Drawing.Point(269, 340);
+            this.label2.Location = new System.Drawing.Point(447, 20);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(255, 17);
+            this.label2.Size = new System.Drawing.Size(221, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "Clique aqui para realizar o seu cadastro!\r\n";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -72,7 +72,7 @@
             this.pictureBox1.BackgroundImage = global::doceria.Properties.Resources.Logotipo_Doceria_Minimalista_Marrom_e_Rosa;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox1.Image = global::doceria.Properties.Resources.Logotipo_Doceria_Minimalista_Marrom_e_Rosa;
-            this.pictureBox1.Location = new System.Drawing.Point(144, -72);
+            this.pictureBox1.Location = new System.Drawing.Point(130, -59);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(495, 409);
             this.pictureBox1.TabIndex = 4;
@@ -86,7 +86,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Image = global::doceria.Properties.Resources.Design_sem_nome;
-            this.label1.Location = new System.Drawing.Point(595, 16);
+            this.label1.Location = new System.Drawing.Point(141, 321);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(112, 16);
             this.label1.TabIndex = 2;
@@ -101,7 +101,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label3.Image = global::doceria.Properties.Resources.Design_sem_nome;
-            this.label3.Location = new System.Drawing.Point(595, 16);
+            this.label3.Location = new System.Drawing.Point(313, 353);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(109, 16);
             this.label3.TabIndex = 5;
@@ -114,9 +114,9 @@
             this.btEnter.Font = new System.Drawing.Font("SuperFrench", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.btEnter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btEnter.Image = global::doceria.Properties.Resources.Design_sem_nome__1_;
-            this.btEnter.Location = new System.Drawing.Point(713, 12);
+            this.btEnter.Location = new System.Drawing.Point(257, 372);
             this.btEnter.Name = "btEnter";
-            this.btEnter.Size = new System.Drawing.Size(75, 23);
+            this.btEnter.Size = new System.Drawing.Size(226, 76);
             this.btEnter.TabIndex = 0;
             this.btEnter.Text = "entrar";
             this.btEnter.UseVisualStyleBackColor = true;
@@ -144,12 +144,12 @@
             this.BackgroundImage = global::doceria.Properties.Resources.Design_sem_nome;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(797, 460);
+            this.Controls.Add(this.btCad);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btSair);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btCad);
             this.Controls.Add(this.btEnter);
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Name = "pagecadastro";

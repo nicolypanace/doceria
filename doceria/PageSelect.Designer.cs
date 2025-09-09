@@ -258,6 +258,7 @@
             this.textBox2.Text = "Bolos feitos com amor, sabor que conquista e aquela textura que dá vontade de rep" +
     "etir!";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox3
             // 
