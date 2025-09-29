@@ -121,5 +121,10 @@ namespace doceria
                 MessageBox.Show("Erro ao carregar registros: " + ex.Message);
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

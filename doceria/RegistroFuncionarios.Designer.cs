@@ -37,6 +37,8 @@
             this.btnSalvar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -121,11 +123,36 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(262, 30);
+            this.label1.Location = new System.Drawing.Point(257, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(300, 26);
             this.label1.TabIndex = 8;
             this.label1.Text = "REGISTRO DE FUNCIONÁRIOS";
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::doceria.Properties.Resources.Design_sem_nome__1_;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(688, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 25);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "avançar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(490, 17);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(192, 16);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "deseja adicionar/alterar produtos?";
             // 
             // RegistroFuncionarios
             // 
@@ -133,6 +160,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::doceria.Properties.Resources.Design_sem_nome;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.txtSalario);
@@ -162,5 +191,7 @@
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label2;
     }
 }
