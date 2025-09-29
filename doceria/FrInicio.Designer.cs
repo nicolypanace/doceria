@@ -37,6 +37,7 @@
             this.btSair = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.btclique = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -146,9 +147,8 @@
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(-1, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(196, 16);
+            this.label4.Size = new System.Drawing.Size(0, 16);
             this.label4.TabIndex = 7;
-            this.label4.Text = "funcionário, realize o cadastro aqui";
             // 
             // btclique
             // 
@@ -163,6 +163,18 @@
             this.btclique.UseVisualStyleBackColor = true;
             this.btclique.Click += new System.EventHandler(this.btclique_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label5.Location = new System.Drawing.Point(9, 12);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(108, 16);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "gestor? clique aqui";
+            // 
             // pagecadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -171,6 +183,7 @@
             this.BackgroundImage = global::doceria.Properties.Resources.Design_sem_nome;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(797, 460);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.btclique);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btCad);
@@ -201,6 +214,7 @@
         private System.Windows.Forms.Button btSair;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btclique;
+        private System.Windows.Forms.Label label5;
     }
 }
 

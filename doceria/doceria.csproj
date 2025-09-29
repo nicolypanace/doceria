@@ -78,6 +78,12 @@
     <Compile Include="PageDonuts.Designer.cs">
       <DependentUpon>PageDonuts.cs</DependentUpon>
     </Compile>
+    <Compile Include="PageGestor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PageGestor.Designer.cs">
+      <DependentUpon>PageGestor.cs</DependentUpon>
+    </Compile>
     <Compile Include="PageLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PageDonuts.resx">
       <DependentUpon>PageDonuts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageGestor.resx">
+      <DependentUpon>PageGestor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PageLogin.resx">
       <DependentUpon>PageLogin.cs</DependentUpon>

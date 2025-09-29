@@ -15,9 +15,16 @@ namespace doceria
     {
         private string connectionString;
 
+        public int GestorId { get; }
+
         public RegistroFuncionarios()
         {
             InitializeComponent();
+        }
+
+        public RegistroFuncionarios(int gestorId)
+        {
+            GestorId = gestorId;
         }
 
         private void RegistroFuncionarios_Load(object sender, EventArgs e)
