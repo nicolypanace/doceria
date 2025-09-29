@@ -58,5 +58,11 @@ namespace doceria
         {
 
         }
+
+        private void btclique_Click(object sender, EventArgs e)
+        {
+            RegistroFuncionarios registroFuncionarios = new RegistroFuncionarios();
+            registroFuncionarios.ShowDialog();
+        }
     }
 }

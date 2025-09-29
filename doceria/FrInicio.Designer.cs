@@ -35,6 +35,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btEnter = new System.Windows.Forms.Button();
             this.btSair = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btclique = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -136,6 +138,31 @@
             this.btSair.UseVisualStyleBackColor = true;
             this.btSair.Click += new System.EventHandler(this.button2_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(-1, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(196, 16);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "funcionário, realize o cadastro aqui";
+            // 
+            // btclique
+            // 
+            this.btclique.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btclique.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btclique.Image = global::doceria.Properties.Resources.Design_sem_nome__1_;
+            this.btclique.Location = new System.Drawing.Point(12, 28);
+            this.btclique.Name = "btclique";
+            this.btclique.Size = new System.Drawing.Size(72, 26);
+            this.btclique.TabIndex = 8;
+            this.btclique.Text = "clique";
+            this.btclique.UseVisualStyleBackColor = true;
+            this.btclique.Click += new System.EventHandler(this.btclique_Click);
+            // 
             // pagecadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -144,6 +171,8 @@
             this.BackgroundImage = global::doceria.Properties.Resources.Design_sem_nome;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(797, 460);
+            this.Controls.Add(this.btclique);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btCad);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btSair);
@@ -170,6 +199,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btEnter;
         private System.Windows.Forms.Button btSair;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btclique;
     }
 }
 
