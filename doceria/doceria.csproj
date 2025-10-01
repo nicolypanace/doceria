@@ -72,6 +72,12 @@
     <Compile Include="PageCadr.Designer.cs">
       <DependentUpon>PageCadr.cs</DependentUpon>
     </Compile>
+    <Compile Include="PageCarrinho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PageCarrinho.Designer.cs">
+      <DependentUpon>PageCarrinho.cs</DependentUpon>
+    </Compile>
     <Compile Include="PageDonuts.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PageCadr.resx">
       <DependentUpon>PageCadr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageCarrinho.resx">
+      <DependentUpon>PageCarrinho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PageDonuts.resx">
       <DependentUpon>PageDonuts.cs</DependentUpon>

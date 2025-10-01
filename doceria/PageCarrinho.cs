@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace doceria
 {
-    public partial class PageDonuts : Form
+    public partial class PageCarrinho : Form
     {
-        public PageDonuts()
+        public PageCarrinho()
         {
             InitializeComponent();
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

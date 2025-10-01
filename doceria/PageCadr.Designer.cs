@@ -175,7 +175,7 @@
             // 
             this.pictureBox2.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.pictureBox2.BackgroundImage = global::doceria.Properties.Resources.Logotipo_Doceria_Minimalista_Marrom_e_Rosa;
-            this.pictureBox2.Location = new System.Drawing.Point(167, -70);
+            this.pictureBox2.Location = new System.Drawing.Point(158, -70);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(486, 412);
             this.pictureBox2.TabIndex = 14;
