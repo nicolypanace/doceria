@@ -186,7 +186,7 @@
             this.btfinalizar.Name = "btfinalizar";
             this.btfinalizar.Size = new System.Drawing.Size(151, 40);
             this.btfinalizar.TabIndex = 21;
-            this.btfinalizar.Text = "VIZUALIZAR CARRINHO";
+            this.btfinalizar.Text = "ADICIONAR AO CARRINHO";
             this.btfinalizar.UseVisualStyleBackColor = false;
             this.btfinalizar.Click += new System.EventHandler(this.btfinalizar_Click);
             // 

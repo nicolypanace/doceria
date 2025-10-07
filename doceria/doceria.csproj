@@ -47,6 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CJ3027571PR2DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CJ3027571PR2DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FrInicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +164,17 @@
     <EmbeddedResource Include="RegistroFuncionarios.resx">
       <DependentUpon>RegistroFuncionarios.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="CJ3027571PR2DataSet.xsc">
+      <DependentUpon>CJ3027571PR2DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CJ3027571PR2DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CJ3027571PR2DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CJ3027571PR2DataSet.xss">
+      <DependentUpon>CJ3027571PR2DataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -204,6 +220,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Design sem nome %287%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mini design.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mini design %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mini design %282%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

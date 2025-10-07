@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -13,9 +14,13 @@ namespace doceria
 {
     public partial class PageGestor : Form
     {
+        private SqlConnection conexao;
+        string strCon = "Data Source=SQLexpress;Initial Catalog=CJ3027571PR2;User ID=aluno;Password=aluno;";
         public PageGestor()
         {
             InitializeComponent();
+           
+            conexao = new SqlConnection(strCon);
         }
 
         public string connectionString { get; private set; }
@@ -25,7 +30,7 @@ namespace doceria
             string usuario = txtUsuario.Text.Trim();
             string senha = txtSenha.Text.Trim();
 
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlConnection conn = new SqlConnection(strCon))
             {
                 conn.Open();
                 string sql = "SELECT Id, Nome FROM Gestores WHERE Usuario = @Usuario AND Senha = @Senha";
@@ -36,28 +41,17 @@ namespace doceria
 
                     SqlDataReader reader = cmd.ExecuteReader();
 
-                    if (reader.Read())
-                    {
-                        int gestorId = reader.GetInt32(0);
-                        string nomeGestor = reader.GetString(1);
 
-                        MessageBox.Show($"Bem-vindo, {nomeGestor}!");
-
-                        RegistroFuncionarios registrofuncionarios = new RegistroFuncionarios(gestorId);
-                        registrofuncionarios.Show();
-
-                        this.Hide(); 
-                        RegistroFuncionarios registroFuncionarios = new RegistroFuncionarios();
-                        registroFuncionarios.ShowDialog();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Usuário ou senha inválidos.");
-                    }
+                    RegistroFuncionarios registroFuncionarios = new RegistroFuncionarios();
+                    registroFuncionarios.ShowDialog();
                 }
+
+                {
+                    MessageBox.Show("Usuário ou senha inválidos.");
+                }
+            }
             }
         }
     }
-}
     
 

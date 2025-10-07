@@ -43,7 +43,7 @@
             this.lblSenha.AutoSize = true;
             this.lblSenha.BackColor = System.Drawing.Color.Transparent;
             this.lblSenha.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSenha.Location = new System.Drawing.Point(264, 169);
+            this.lblSenha.Location = new System.Drawing.Point(275, 284);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(53, 19);
             this.lblSenha.TabIndex = 0;
@@ -54,7 +54,7 @@
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.BackColor = System.Drawing.Color.Transparent;
             this.lblUsuario.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(264, 113);
+            this.lblUsuario.Location = new System.Drawing.Point(264, 238);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(64, 19);
             this.lblUsuario.TabIndex = 1;
@@ -62,7 +62,7 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(334, 112);
+            this.txtUsuario.Location = new System.Drawing.Point(334, 239);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(138, 20);
             this.txtUsuario.TabIndex = 5;
@@ -72,7 +72,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(263, 35);
+            this.label4.Location = new System.Drawing.Point(241, 49);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(321, 26);
             this.label4.TabIndex = 6;
@@ -83,7 +83,7 @@
             this.btnLogin.BackgroundImage = global::doceria.Properties.Resources.Design_sem_nome__1_;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(334, 379);
+            this.btnLogin.Location = new System.Drawing.Point(315, 356);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(157, 59);
             this.btnLogin.TabIndex = 7;
@@ -93,17 +93,17 @@
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(334, 170);
+            this.txtSenha.Location = new System.Drawing.Point(334, 283);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(138, 20);
             this.txtSenha.TabIndex = 8;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::doceria.Properties.Resources.Logotipo_Doceria_Minimalista_Marrom_e_Rosa;
-            this.pictureBox1.Location = new System.Drawing.Point(187, -19);
+            this.pictureBox1.Image = global::doceria.Properties.Resources.mini_design__2_;
+            this.pictureBox1.Location = new System.Drawing.Point(315, 78);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(510, 436);
+            this.pictureBox1.Size = new System.Drawing.Size(163, 141);
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
@@ -113,13 +113,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::doceria.Properties.Resources.Design_sem_nome;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.lblSenha);
-            this.Controls.Add(this.pictureBox1);
             this.Name = "PageGestor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PageGestor";

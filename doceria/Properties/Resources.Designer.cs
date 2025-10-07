@@ -253,6 +253,36 @@ namespace doceria.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap mini_design {
+            get {
+                object obj = ResourceManager.GetObject("mini design", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mini_design__1_ {
+            get {
+                object obj = ResourceManager.GetObject("mini design (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mini_design__2_ {
+            get {
+                object obj = ResourceManager.GetObject("mini design (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Pastry_Donuts_Closeup_White_background_527218_2560x1440 {
             get {
                 object obj = ResourceManager.GetObject("Pastry_Donuts_Closeup_White_background_527218_2560x1440", resourceCulture);
