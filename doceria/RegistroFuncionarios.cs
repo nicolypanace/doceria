@@ -42,38 +42,54 @@ namespace doceria
         {
             string nome = txtNome.Text.Trim();
             string cargo = txtCargo.Text.Trim();
-            string salario = txtSalario.Text.Trim();
+            string salarioTexto = txtSalario.Text.Trim();
 
-            if (string.IsNullOrWhiteSpace(nome) || string.IsNullOrWhiteSpace(cargo) || string.IsNullOrWhiteSpace(salario))
+            if (string.IsNullOrWhiteSpace(nome) || string.IsNullOrWhiteSpace(cargo) || string.IsNullOrWhiteSpace(salarioTexto))
             {
                 MessageBox.Show("Preencha todos os campos.");
+                return;
+            }
+
+            // Substitui vírgula por ponto se necessário
+            salarioTexto = salarioTexto.Replace(",", ".");
+
+            decimal salario;
+
+            try
+            {
+                salario = Convert.ToDecimal(salarioTexto, System.Globalization.CultureInfo.InvariantCulture);
+            }
+            catch
+            {
+                MessageBox.Show("Salário inválido. Use ponto como separador. Ex: 2500.75");
                 return;
             }
 
             try
             {
                 conexao.Open();
-
                 string query = "INSERT INTO Funcionarios (Nome, Cargo, Salario) VALUES (@Nome, @Cargo, @Salario)";
                 SqlCommand cmd = new SqlCommand(query, conexao);
                 cmd.Parameters.AddWithValue("@Nome", nome);
                 cmd.Parameters.AddWithValue("@Cargo", cargo);
                 cmd.Parameters.AddWithValue("@Salario", salario);
-
                 cmd.ExecuteNonQuery();
 
                 MessageBox.Show("Funcionário adicionado com sucesso!");
-                LimparCampos();
+                txtNome.Clear();
+                txtCargo.Clear();
+                txtSalario.Clear();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro: " + ex.Message);
+                MessageBox.Show("Erro ao inserir: " + ex.Message);
             }
             finally
             {
                 conexao.Close();
             }
         }
+
 
         private void LimparCampos()
         {
