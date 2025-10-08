@@ -16,89 +16,101 @@ namespace doceria
     public partial class RegistroFuncionarios : Form
     {
         private SqlConnection conexao;
-
-        private string connectionString;
-
-        public int GestorId { get; }
+		string strCon = "Data Source=SQLexpress;Initial Catalog=CJ3027571PR2;User ID=aluno;Password=aluno;";
 
         public RegistroFuncionarios()
         {
-            conexao = new SqlConnection(connectionString);
+			
             InitializeComponent();
         }
 
         public RegistroFuncionarios(int gestorId)
         {
-            GestorId = gestorId;
-        }
+			InitializeComponent();
+
+			conexao = new SqlConnection(strCon);
+		}
 
         private void RegistroFuncionarios_Load(object sender, EventArgs e)
         {
-            string connectionString = "Data Source=SQLexpress;Initial Catalog=CJ3027571PR2;User ID=aluno;Password=aluno;";
+			//  esta linha de código carrega dados na tabela 'cJ3027571PR2DataSet1.Funcionarios'.
+			this.funcionariosTableAdapter.Fill(this.cJ3027571PR2DataSet1.Funcionarios);
+			string connectionString = "Data Source=SQLexpress;Initial Catalog=CJ3027571PR2;User ID=aluno;Password=aluno;";
 
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            string nome = txtNome.Text.Trim();
-            string cargo = txtCargo.Text.Trim();
-            string salarioTexto = txtSalario.Text.Trim();
+			string nome = txtNome.Text.Trim();
+			string cargo = txtCargo.Text.Trim();
+			string salarioTexto = txtSalario.Text.Trim();
 
-            if (string.IsNullOrWhiteSpace(nome) || string.IsNullOrWhiteSpace(cargo) || string.IsNullOrWhiteSpace(salarioTexto))
-            {
-                MessageBox.Show("Preencha todos os campos.");
-                return;
-            }
+			if (string.IsNullOrEmpty(nome) || string.IsNullOrEmpty(cargo) || string.IsNullOrEmpty(salarioTexto))
+			{
+				MessageBox.Show("Preencha todos os campos.");
+				return;
+			}
 
-            // Substitui vírgula por ponto se necessário
-            salarioTexto = salarioTexto.Replace(",", ".");
-
-            decimal salario;
-
-            try
-            {
-                salario = Convert.ToDecimal(salarioTexto, System.Globalization.CultureInfo.InvariantCulture);
-            }
-            catch
-            {
-                MessageBox.Show("Salário inválido. Use ponto como separador. Ex: 2500.75");
-                return;
-            }
-
-            try
-            {
-                conexao.Open();
-                string query = "INSERT INTO Funcionarios (Nome, Cargo, Salario) VALUES (@Nome, @Cargo, @Salario)";
-                SqlCommand cmd = new SqlCommand(query, conexao);
-                cmd.Parameters.AddWithValue("@Nome", nome);
-                cmd.Parameters.AddWithValue("@Cargo", cargo);
-                cmd.Parameters.AddWithValue("@Salario", salario);
-                cmd.ExecuteNonQuery();
-
-                MessageBox.Show("Funcionário adicionado com sucesso!");
-                txtNome.Clear();
-                txtCargo.Clear();
-                txtSalario.Clear();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao inserir: " + ex.Message);
-            }
-            finally
-            {
-                conexao.Close();
-            }
-        }
+			if (!decimal.TryParse(salarioTexto, NumberStyles.Number, new CultureInfo("pt-BR"), out decimal salario))
 
 
-        private void LimparCampos()
+				using (SqlConnection conn = new SqlConnection(strCon))
+			{
+				string query = "INSERT INTO Funcionarios (Nome, Cargo, Salario) VALUES (@Nome, @Cargo, @Salario)";
+				SqlCommand cmd = new SqlCommand(query, conn);
+				cmd.Parameters.AddWithValue("@Nome", nome);
+				cmd.Parameters.AddWithValue("@Cargo", cargo);
+				cmd.Parameters.AddWithValue("@Salario", salario);
+
+				try
+				{
+					conn.Open();
+					cmd.ExecuteNonQuery();
+					MessageBox.Show("Funcionário cadastrado com sucesso!");
+					LimparCampos();
+					CarregarDados();
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show("Erro: " + ex.Message);
+				}
+			}
+		}
+
+		private void CarregarDados()
+		{
+			using (SqlConnection conn = new SqlConnection(strCon))
+			{
+				string query = "SELECT * FROM Funcionarios";
+				SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+				DataTable dt = new DataTable();
+
+				try
+				{
+					adapter.Fill(dt);
+					dgvDados.DataSource = dt;
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show("Erro ao carregar dados: " + ex.Message);
+				}
+			}
+		}
+
+		private void LimparCampos()
+		{
+			txtNome.Clear();
+			txtCargo.Clear();
+			txtSalario.Clear();
+			txtNome.Focus();
+		}
+
+        private void Nome_Click(object sender, EventArgs e)
         {
-            txtNome.Clear();
-            txtCargo.Clear();
-            txtSalario.Clear();
+
         }
 
-        private void txtNome_TextChanged(object sender, EventArgs e)
+        private void txtSalario_TextChanged(object sender, EventArgs e)
         {
 
         }
