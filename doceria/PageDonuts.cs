@@ -21,5 +21,11 @@ namespace doceria
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+			PageCarrinho pagecarrinho = new PageCarrinho();
+			pagecarrinho.Show();
+		}
     }
 }

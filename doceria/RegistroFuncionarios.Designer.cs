@@ -170,6 +170,7 @@
 			this.dgvDados.Name = "dgvDados";
 			this.dgvDados.Size = new System.Drawing.Size(442, 119);
 			this.dgvDados.TabIndex = 12;
+			this.dgvDados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDados_CellContentClick);
 			// 
 			// idDataGridViewTextBoxColumn
 			// 
