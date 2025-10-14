@@ -52,9 +52,12 @@ namespace doceria
 			}
 
 			if (!decimal.TryParse(salarioTexto, NumberStyles.Number, new CultureInfo("pt-BR"), out decimal salario))
+			{
+				MessageBox.Show("Salário inválido.");
+				return;
+			}
 
-
-				using (SqlConnection conn = new SqlConnection(strCon))
+			using (SqlConnection conn = new SqlConnection(strCon))
 			{
 				string query = "INSERT INTO Funcionarios (Nome, Cargo, Salario) VALUES (@Nome, @Cargo, @Salario)";
 				SqlCommand cmd = new SqlCommand(query, conn);
@@ -67,7 +70,6 @@ namespace doceria
 					conn.Open();
 					cmd.ExecuteNonQuery();
 					MessageBox.Show("Funcionário cadastrado com sucesso!");
-					LimparCampos();
 					CarregarDados();
 				}
 				catch (Exception ex)
