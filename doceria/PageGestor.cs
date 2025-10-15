@@ -51,7 +51,13 @@ namespace doceria
                 }
             }
             }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            PageComeco pageComeco = new PageComeco();
+            pageComeco.ShowDialog();  
         }
+    }
     }
     
 

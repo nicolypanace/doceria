@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace doceria
 {
-    public partial class pagecadastro : Form
+    public partial class PageComeco : Form
     {
-        public pagecadastro()
+        public PageComeco()
         {
             InitializeComponent();
         }
@@ -52,11 +52,6 @@ namespace doceria
         {
             PageLogin pageLogin = new PageLogin();
             pageLogin.ShowDialog();
-        }
-
-        private void pagecadastro_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btclique_Click(object sender, EventArgs e)

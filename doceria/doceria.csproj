@@ -62,11 +62,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CJ3027571PR2DataSet2.xsd</DependentUpon>
     </Compile>
-    <Compile Include="FrInicio.cs">
+    <Compile Include="CJ3027571PR2DataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CJ3027571PR2DataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CJ3027571PR2DataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CJ3027571PR2DataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PageComeco.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrInicio.Designer.cs">
-      <DependentUpon>FrInicio.cs</DependentUpon>
+    <Compile Include="PageComeco.Designer.cs">
+      <DependentUpon>PageComeco.cs</DependentUpon>
     </Compile>
     <Compile Include="FrInicio1.cs" />
     <Compile Include="PageBolos.cs">
@@ -131,8 +141,8 @@
     <Compile Include="RegistroFuncionarios.Designer.cs">
       <DependentUpon>RegistroFuncionarios.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FrInicio.resx">
-      <DependentUpon>FrInicio.cs</DependentUpon>
+    <EmbeddedResource Include="PageComeco.resx">
+      <DependentUpon>PageComeco.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PageBolos.resx">
       <DependentUpon>PageBolos.cs</DependentUpon>
@@ -206,6 +216,28 @@
     </None>
     <None Include="CJ3027571PR2DataSet2.xss">
       <DependentUpon>CJ3027571PR2DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="CJ3027571PR2DataSet3.xsc">
+      <DependentUpon>CJ3027571PR2DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="CJ3027571PR2DataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CJ3027571PR2DataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CJ3027571PR2DataSet3.xss">
+      <DependentUpon>CJ3027571PR2DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="CJ3027571PR2DataSet4.xsc">
+      <DependentUpon>CJ3027571PR2DataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="CJ3027571PR2DataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CJ3027571PR2DataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CJ3027571PR2DataSet4.xss">
+      <DependentUpon>CJ3027571PR2DataSet4.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

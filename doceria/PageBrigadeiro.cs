@@ -13,22 +13,18 @@ namespace doceria
 {
     public partial class PageBrigadeiro : Form
     {
-		string connectionString = @"Data Source=SQLexpress;Initial Catalog=CJ3027571PR2;User ID=aluno";
+        string connectionString = @"Data Source=SQLexpress;Initial Catalog=CJ3027571PR2;User ID=aluno";
 
-		public PageBrigadeiro()
+        public PageBrigadeiro()
         {
             InitializeComponent();
         }
 
         private void PageBrigadeiro_Load(object sender, EventArgs e)
         {
-			// Adiciona os sabores ao ComboBox
-			cmbSabor.Items.Add("Brigadeiro tradicional");
-			cmbSabor.Items.Add("Brigadeiro de limão");
-			cmbSabor.Items.Add("Brigadeiro de morango");
-			cmbSabor.Items.Add("Brigadeiro de beijinho");
-			cmbSabor.Items.Add("Brigadeiro de paçoca");
-		}
+            PageCarrinho pageCarrinho = new PageCarrinho();
+            pageCarrinho.Show();
+        }
 
         private void label6_Click(object sender, EventArgs e)
         {
@@ -57,51 +53,56 @@ namespace doceria
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-			if (cmbSabor.SelectedItem == null)
-			{
-				MessageBox.Show("Selecione um sabor de brigadeiro.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-				return;
-			}
+            if (!int.TryParse(txtQuantidade.Text.Trim(), out int quantidade) || quantidade <= 0)
+            {
+                MessageBox.Show("Informe uma quantidade válida de caixas.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-			if (!int.TryParse(txtQuantidade.Text, out int quantidade) || quantidade <= 0)
-			{
-				MessageBox.Show("Informe uma quantidade válida de caixas.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				return;
-			}
+            // Dados para o banco
+            string sabor = cmbSabor.SelectedItem.ToString();
+            decimal precoCaixa = 10.00m;
 
-			string sabor = cmbSabor.SelectedItem.ToString();
-			decimal precoCaixa = 10.00m;
+            // CONEXÃO COM O BANCO
+            string connectionString = @"Data Source=SQLexpress;Initial Catalog=CJ3027571PR2;User ID=aluno;Password=aluno;"; // Substitua por sua string real
 
-			try
-			{
-				using (SqlConnection conn = new SqlConnection(connectionString))
-				{
-					string sql = "INSERT INTO CarrinhoBrigadeiro (Sabor, QuantidadeCaixas, PrecoCaixa) VALUES (@sabor, @quantidade, @preco)";
-					SqlCommand cmd = new SqlCommand(sql, conn);
-					cmd.Parameters.AddWithValue("@sabor", sabor);
-					cmd.Parameters.AddWithValue("@quantidade", quantidade);
-					cmd.Parameters.AddWithValue("@preco", precoCaixa);
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    string sql = "INSERT INTO CarrinhoBrigadeiro (Sabor, QuantidadeCaixas, PrecoCaixa) VALUES (@sabor, @quantidade, @preco)";
 
-					conn.Open();
-					cmd.ExecuteNonQuery();
-				}
+                    using (SqlCommand cmd = new SqlCommand(sql, con))
+                    {
+                        cmd.Parameters.AddWithValue("@sabor", sabor);
+                        cmd.Parameters.AddWithValue("@quantidade", quantidade);
+                        cmd.Parameters.AddWithValue("@preco", precoCaixa);
 
-				MessageBox.Show($"{quantidade} caixa(s) de {sabor} foram adicionadas ao carrinho!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                    }
+                }
 
-				cmbSabor.SelectedIndex = -1;
-				txtQuantidade.Clear();
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show("Erro ao adicionar ao carrinho:\n" + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-			}
-		}
+                // Sucesso
+                MessageBox.Show($"{quantidade} caixa(s) de {sabor} foram adicionadas ao carrinho!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-		private void btnVerCarrinho_Click(object sender, EventArgs e)
-		{
-			PageCarrinho pagecarrinho = new PageCarrinho();
-			pagecarrinho.Show();
-		}
-	}
+                // Limpa campos
+                cmbSabor.SelectedIndex = -1;
+                txtQuantidade.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao adicionar ao carrinho:\n" + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnVerCarrinho_Click(object sender, EventArgs e) //visualiza o carrinho após adicionar
+        {
+            PageCarrinho pagecarrinho = new PageCarrinho();
+            pagecarrinho.Show();
+        }
     }
+}
+
+
 

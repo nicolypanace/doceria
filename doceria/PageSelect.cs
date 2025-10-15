@@ -18,23 +18,10 @@ namespace doceria
         {
             InitializeComponent();
         }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
-            PageBrigadeiro pageBrigadeiro = new PageBrigadeiro();
-            pageBrigadeiro.ShowDialog();
+          
         }
-
         private void btbolo_Click(object sender, EventArgs e)
         {
             PageBolos pageBolos = new PageBolos();
@@ -53,6 +40,11 @@ namespace doceria
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PageSelect_Load(object sender, EventArgs e)
         {
 
         }

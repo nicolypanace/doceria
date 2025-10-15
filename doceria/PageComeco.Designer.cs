@@ -1,6 +1,6 @@
 ﻿namespace doceria
 {
-    partial class pagecadastro
+    partial class PageComeco
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -175,7 +175,7 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "gestor? clique aqui";
             // 
-            // pagecadastro
+            // PageComeco
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -194,10 +194,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btEnter);
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Name = "pagecadastro";
+            this.Name = "PageComeco";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.pagecadastro_Load);
+            this.Text = "PageComeco";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
