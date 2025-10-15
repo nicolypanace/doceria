@@ -22,8 +22,7 @@ namespace doceria
 		public decimal Subtotal => Quantidade * PrecoUnitario;
 		public PageCarrinho()
         {
-			
-			InitializeComponent();
+            InitializeComponent();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -38,26 +37,23 @@ namespace doceria
 
 		private void PageCarrinho_Load(object sender, EventArgs e)
 		{
-			// TODO: esta linha de código carrega dados na tabela 'cJ3027571PR2DataSet2.Carrinho'. Você pode movê-la ou removê-la conforme necessário.
-			this.carrinhoTableAdapter.Fill(this.cJ3027571PR2DataSet2.Carrinho);
-			using (SqlConnection conn = new SqlConnection(connectionString))
-			{
-				string sql = "SELECT Id, Sabor, Quantidade, PrecoUnitario, Subtotal, DataAdicionado FROM Carrinho";
-				SqlDataAdapter da = new SqlDataAdapter(sql, conn);
-				DataTable dt = new DataTable();
-			}
-		}
-
-		private void AtualizarTotal()
-		{
-			decimal total = PageBolos.Carrinho.Sum(item => item.Subtotal);
-			lblTotal.Text = $"Total: R$ {total:F2}";
-		}
-
-		private void btnFechar_Click(object sender, EventArgs e)
-		{
-			this.Close();
-		}
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    string query = "SELECT TipoDoce, Sabor, Quantidade, PrecoUnitario, Total FROM Carrinho";
+                    SqlDataAdapter da = new SqlDataAdapter(query, conn);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    dgvCarrinho.DataSource = dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao carregar carrinho: " + ex.Message);
+            }
+        }
+    
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

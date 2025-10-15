@@ -13,7 +13,7 @@ namespace doceria
 {
     public partial class PageBrigadeiro : Form
     {
-        string connectionString = @"Data Source=SQLexpress;Initial Catalog=CJ3027571PR2;User ID=aluno";
+        string connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=CJ3027571PR2;User ID=aluno;Password=aluno";
 
         public PageBrigadeiro()
         {
