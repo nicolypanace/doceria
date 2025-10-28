@@ -98,15 +98,6 @@ namespace doceria
 				}
 			}
 		}
-
-		private void LimparCampos()
-		{
-			txtNome.Clear();
-			txtCargo.Clear();
-			txtSalario.Clear();
-			txtNome.Focus();
-		}
-
         private void Nome_Click(object sender, EventArgs e)
         {
 

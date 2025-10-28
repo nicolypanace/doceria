@@ -36,16 +36,26 @@
             this.cJ3027571PR2DataSet2 = new doceria.CJ3027571PR2DataSet2();
             this.lblTotal = new System.Windows.Forms.Label();
             this.carrinhoTableAdapter = new doceria.CJ3027571PR2DataSet2TableAdapters.CarrinhoTableAdapter();
-            this.dgvCarrinho = new System.Windows.Forms.DataGridView();
+            this.cJ3027571PR2DataSet5 = new doceria.CJ3027571PR2DataSet5();
+            this.carrinhoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.carrinhoTableAdapter1 = new doceria.CJ3027571PR2DataSet5TableAdapters.CarrinhoTableAdapter();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cJ3027571PR2DataSet6 = new doceria.CJ3027571PR2DataSet6();
+            this.carrinhoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.carrinhoTableAdapter2 = new doceria.CJ3027571PR2DataSet6TableAdapters.CarrinhoTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoDoceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.saborDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precoUnitarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subtotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataAdicionadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorUnitarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorTotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.carrinhoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cJ3027571PR2DataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCarrinho)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cJ3027571PR2DataSet5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carrinhoBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cJ3027571PR2DataSet6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carrinhoBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -110,23 +120,51 @@
             // 
             this.carrinhoTableAdapter.ClearBeforeFill = true;
             // 
-            // dgvCarrinho
+            // cJ3027571PR2DataSet5
             // 
-            this.dgvCarrinho.AutoGenerateColumns = false;
-            this.dgvCarrinho.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCarrinho.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cJ3027571PR2DataSet5.DataSetName = "CJ3027571PR2DataSet5";
+            this.cJ3027571PR2DataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // carrinhoBindingSource1
+            // 
+            this.carrinhoBindingSource1.DataMember = "Carrinho";
+            this.carrinhoBindingSource1.DataSource = this.cJ3027571PR2DataSet5;
+            // 
+            // carrinhoTableAdapter1
+            // 
+            this.carrinhoTableAdapter1.ClearBeforeFill = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
+            this.tipoDoceDataGridViewTextBoxColumn,
             this.saborDataGridViewTextBoxColumn,
             this.quantidadeDataGridViewTextBoxColumn,
-            this.precoUnitarioDataGridViewTextBoxColumn,
-            this.subtotalDataGridViewTextBoxColumn,
-            this.dataAdicionadoDataGridViewTextBoxColumn});
-            this.dgvCarrinho.DataSource = this.carrinhoBindingSource;
-            this.dgvCarrinho.Location = new System.Drawing.Point(81, 80);
-            this.dgvCarrinho.Name = "dgvCarrinho";
-            this.dgvCarrinho.Size = new System.Drawing.Size(647, 243);
-            this.dgvCarrinho.TabIndex = 5;
-            this.dgvCarrinho.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.valorUnitarioDataGridViewTextBoxColumn,
+            this.valorTotalDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.carrinhoBindingSource2;
+            this.dataGridView1.Location = new System.Drawing.Point(102, 64);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(636, 257);
+            this.dataGridView1.TabIndex = 5;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCarrinho_CellContentClick_1);
+            // 
+            // cJ3027571PR2DataSet6
+            // 
+            this.cJ3027571PR2DataSet6.DataSetName = "CJ3027571PR2DataSet6";
+            this.cJ3027571PR2DataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // carrinhoBindingSource2
+            // 
+            this.carrinhoBindingSource2.DataMember = "Carrinho";
+            this.carrinhoBindingSource2.DataSource = this.cJ3027571PR2DataSet6;
+            // 
+            // carrinhoTableAdapter2
+            // 
+            this.carrinhoTableAdapter2.ClearBeforeFill = true;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -134,6 +172,12 @@
             this.idDataGridViewTextBoxColumn.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tipoDoceDataGridViewTextBoxColumn
+            // 
+            this.tipoDoceDataGridViewTextBoxColumn.DataPropertyName = "TipoDoce";
+            this.tipoDoceDataGridViewTextBoxColumn.HeaderText = "TipoDoce";
+            this.tipoDoceDataGridViewTextBoxColumn.Name = "tipoDoceDataGridViewTextBoxColumn";
             // 
             // saborDataGridViewTextBoxColumn
             // 
@@ -147,24 +191,18 @@
             this.quantidadeDataGridViewTextBoxColumn.HeaderText = "Quantidade";
             this.quantidadeDataGridViewTextBoxColumn.Name = "quantidadeDataGridViewTextBoxColumn";
             // 
-            // precoUnitarioDataGridViewTextBoxColumn
+            // valorUnitarioDataGridViewTextBoxColumn
             // 
-            this.precoUnitarioDataGridViewTextBoxColumn.DataPropertyName = "PrecoUnitario";
-            this.precoUnitarioDataGridViewTextBoxColumn.HeaderText = "PrecoUnitario";
-            this.precoUnitarioDataGridViewTextBoxColumn.Name = "precoUnitarioDataGridViewTextBoxColumn";
+            this.valorUnitarioDataGridViewTextBoxColumn.DataPropertyName = "ValorUnitario";
+            this.valorUnitarioDataGridViewTextBoxColumn.HeaderText = "ValorUnitario";
+            this.valorUnitarioDataGridViewTextBoxColumn.Name = "valorUnitarioDataGridViewTextBoxColumn";
             // 
-            // subtotalDataGridViewTextBoxColumn
+            // valorTotalDataGridViewTextBoxColumn
             // 
-            this.subtotalDataGridViewTextBoxColumn.DataPropertyName = "Subtotal";
-            this.subtotalDataGridViewTextBoxColumn.HeaderText = "Subtotal";
-            this.subtotalDataGridViewTextBoxColumn.Name = "subtotalDataGridViewTextBoxColumn";
-            this.subtotalDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dataAdicionadoDataGridViewTextBoxColumn
-            // 
-            this.dataAdicionadoDataGridViewTextBoxColumn.DataPropertyName = "DataAdicionado";
-            this.dataAdicionadoDataGridViewTextBoxColumn.HeaderText = "DataAdicionado";
-            this.dataAdicionadoDataGridViewTextBoxColumn.Name = "dataAdicionadoDataGridViewTextBoxColumn";
+            this.valorTotalDataGridViewTextBoxColumn.DataPropertyName = "ValorTotal";
+            this.valorTotalDataGridViewTextBoxColumn.HeaderText = "ValorTotal";
+            this.valorTotalDataGridViewTextBoxColumn.Name = "valorTotalDataGridViewTextBoxColumn";
+            this.valorTotalDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // PageCarrinho
             // 
@@ -172,7 +210,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::doceria.Properties.Resources.Design_sem_nome;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dgvCarrinho);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.btVoltar);
             this.Controls.Add(this.btConfirmar);
@@ -183,7 +221,11 @@
             this.Load += new System.EventHandler(this.PageCarrinho_Load);
             ((System.ComponentModel.ISupportInitialize)(this.carrinhoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cJ3027571PR2DataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCarrinho)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cJ3027571PR2DataSet5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carrinhoBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cJ3027571PR2DataSet6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carrinhoBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -198,12 +240,18 @@
         private CJ3027571PR2DataSet2 cJ3027571PR2DataSet2;
         private System.Windows.Forms.BindingSource carrinhoBindingSource;
         private CJ3027571PR2DataSet2TableAdapters.CarrinhoTableAdapter carrinhoTableAdapter;
-        private System.Windows.Forms.DataGridView dgvCarrinho;
+        private CJ3027571PR2DataSet5 cJ3027571PR2DataSet5;
+        private System.Windows.Forms.BindingSource carrinhoBindingSource1;
+        private CJ3027571PR2DataSet5TableAdapters.CarrinhoTableAdapter carrinhoTableAdapter1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private CJ3027571PR2DataSet6 cJ3027571PR2DataSet6;
+        private System.Windows.Forms.BindingSource carrinhoBindingSource2;
+        private CJ3027571PR2DataSet6TableAdapters.CarrinhoTableAdapter carrinhoTableAdapter2;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoDoceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn saborDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantidadeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precoUnitarioDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn subtotalDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataAdicionadoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valorUnitarioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valorTotalDataGridViewTextBoxColumn;
     }
 }

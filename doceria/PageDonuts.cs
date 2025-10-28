@@ -38,23 +38,24 @@ namespace doceria
                 MessageBox.Show("Selecione o sabor e a quantidade!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
+            string doce = "donuts";
             string sabor = cmbSabor.SelectedItem.ToString();
             int quantidade = int.Parse(txtQuantidade.Text);
             decimal ValorUnitario = 18.00m; // valor por caixa de donuts
-            decimal ValorTotal = ValorUnitario * quantidade;
 
             try
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    string query = "INSERT INTO Carrinho (TipoDoce, Sabor, Quantidade, ValorUnitario, Valor Total) VALUES (@TipoDoce, @Sabor, @Quantidade, @ValorUnitario, @Valor Total)";
+                    string query = "INSERT INTO Carrinho (TipoDoce, Sabor, Quantidade, ValorUnitario) " +
+               "VALUES (@TipoDoce, @Sabor, @Quantidade, @ValorUnitario)";
                     SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@TipoDoce", "Donuts");
+                   
+                     cmd.Parameters.AddWithValue("@TipoDoce", doce);
                     cmd.Parameters.AddWithValue("@Sabor", sabor);
                     cmd.Parameters.AddWithValue("@Quantidade", quantidade);
                     cmd.Parameters.AddWithValue("@ValorUnitario", ValorUnitario);
-                    cmd.Parameters.AddWithValue("@Valor Total", ValorTotal);
+
 
                     conn.Open();
                     cmd.ExecuteNonQuery();
@@ -67,12 +68,6 @@ namespace doceria
             {
                 MessageBox.Show("Erro ao salvar no banco de dados: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void btnVerCarrinho_Click(object sender, EventArgs e)
-        {
-            PageCarrinho carrinho = new PageCarrinho();
-            carrinho.Show();
         }
     }
 }

@@ -14,26 +14,80 @@ namespace doceria
 {
     public partial class PageBolos : Form
     {
-		string connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=CJ3027571PR2;User ID=aluno;Password=aluno";
+        string connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=CJ3027571PR2;User ID=aluno;Password=aluno";
 
-		public static List<PageCarrinho> Carrinho = new List<PageCarrinho>();
-		public PageBolos()
+        public static List<PageCarrinho> Carrinho = new List<PageCarrinho>();
+        public PageBolos()
         {
             InitializeComponent();
         }
 
         private void PageBolos_Load(object sender, EventArgs e)
         {
-			cmbSabores.Items.Clear();
-			cmbSabores.Items.Add("Milho com goiabada");
-			cmbSabores.Items.Add("Laranja");
-			cmbSabores.Items.Add("Chocolate");
-			cmbSabores.Items.Add("Cenoura");
-			cmbSabores.Items.Add("Prestígio");
-			cmbSabores.Items.Add("Morango");
-			cmbSabores.Items.Add("Limão");
-			cmbSabores.Items.Add("Maracujá");
-		}
+            cmbSabores.Items.Clear();
+            cmbSabores.Items.Add("Milho com goiabada");
+            cmbSabores.Items.Add("Laranja");
+            cmbSabores.Items.Add("Chocolate");
+            cmbSabores.Items.Add("Cenoura");
+            cmbSabores.Items.Add("Prestígio");
+            cmbSabores.Items.Add("Morango");
+            cmbSabores.Items.Add("Limão");
+            cmbSabores.Items.Add("Maracujá");
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (cmbSabores.SelectedItem == null)
+            {
+                MessageBox.Show("Selecione um sabor de bolo.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!int.TryParse(txtQuantidade.Text, out int quantidade) || quantidade <= 0)
+            {
+                MessageBox.Show("Informe uma quantidade válida.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string sabor = cmbSabores.SelectedItem.ToString();
+            decimal precoUnitario = ObterPreco(sabor);
+            string connectionString = @"Data Source=SQLexpress;Initial Catalog=CJ3027571PR2;User ID=aluno;Password=aluno;";
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    string query = "INSERT INTO Carrinho (TipoDoce, Sabor, Quantidade, ValorUnitario, Valor Total) VALUES (@TipoDoce, @Sabor, @Quantidade, @ValorUnitario, @Valor Total)";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@TipoDoce", "Donuts");
+                    cmd.Parameters.AddWithValue("@Sabor", sabor);
+                    cmd.Parameters.AddWithValue("@Quantidade", quantidade);
+
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                }
+
+                MessageBox.Show($"{sabor} foi adicionado ao carrinho!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cmbSabores.SelectedIndex = -1;
+                txtQuantidade.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao adicionar ao carrinho:\n" + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private decimal ObterPreco(string sabor)
+        {
+            string[] simples = { "Milho com Goiabada", "Chocolate", "Laranja", "Cenoura" };
+            string[] recheados = { "Prestígio", "Morango", "Limão", "Maracujá" };
+
+            if (Array.Exists(simples, s => s == sabor))
+                return 18.00m;
+            else if (Array.Exists(recheados, s => s == sabor))
+                return 40.00m;
+            else
+                return 0m;
+        }
 
         private void label7_Click(object sender, EventArgs e)
         {
@@ -62,17 +116,11 @@ namespace doceria
 
         private void btfinalizar_Click(object sender, EventArgs e)
         {
-           
+
             PageCarrinho pageCarrinho = new PageCarrinho();
             pageCarrinho.Show();
-          
+
         }
-		// botão para abrir o carrinho
-		private void btnVerCarrinho_Click(object sender, EventArgs e)
-		{
-			PageCarrinho pageCarrinho = new PageCarrinho();
-			pageCarrinho.ShowDialog();
-		}
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
@@ -164,59 +212,5 @@ namespace doceria
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (cmbSabores.SelectedItem == null)
-            {
-                MessageBox.Show("Selecione um sabor de bolo.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (!int.TryParse(txtQuantidade.Text, out int quantidade) || quantidade <= 0)
-            {
-                MessageBox.Show("Informe uma quantidade válida.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            string sabor = cmbSabores.SelectedItem.ToString();
-            decimal precoUnitario = ObterPreco(sabor);
-            string connectionString = @"Data Source=SQLexpress;Initial Catalog=CJ3027571PR2;User ID=aluno;Password=aluno;";
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    string sql = "INSERT INTO CarrinhoBolos (Sabores, Quantidade, Preco) VALUES (@sabores, @quantidade, @preco)";
-                    SqlCommand cmd = new SqlCommand(sql, conn);
-
-                    cmd.Parameters.AddWithValue("@sabores", sabor);
-                    cmd.Parameters.AddWithValue("@quantidade", quantidade);
-                    cmd.Parameters.AddWithValue("@preco", precoUnitario);
-
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                }
-
-                MessageBox.Show($"{sabor} foi adicionado ao carrinho!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                cmbSabores.SelectedIndex = -1;
-                txtQuantidade.Clear();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao adicionar ao carrinho:\n" + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-		private decimal ObterPreco(string sabor)
-		{
-			string[] simples = { "Milho com Goiabada", "Chocolate", "Laranja", "Cenoura" };
-			string[] recheados = { "Prestígio", "Morango", "Limão", "Maracujá" };
-
-			if (Array.Exists(simples, s => s == sabor))
-				return 18.00m;
-			else if (Array.Exists(recheados, s => s == sabor))
-				return 40.00m;
-			else
-				return 0m;
-		}
     }
 }

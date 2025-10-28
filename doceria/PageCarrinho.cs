@@ -14,9 +14,8 @@ namespace doceria
 {
     public partial class PageCarrinho : Form
 	{
-		string connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=CJ3027571PR2;User ID=aluno;Password=aluno";
+		string connectionString = @"Data Source= SQLEXPRESS;Initial Catalog=CJ3027571PR2;User ID=aluno;Password=aluno";
 
-		public string Sabores { get; set; }
 		public int Quantidade { get; set; }
 		public decimal PrecoUnitario { get; set; }
 		public decimal Subtotal => Quantidade * PrecoUnitario;
@@ -30,22 +29,17 @@ namespace doceria
 
         }
 
-        private void dgvCarrinho_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
 		private void PageCarrinho_Load(object sender, EventArgs e)
 		{
             try
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    string query = "SELECT TipoDoce, Sabor, Quantidade, PrecoUnitario, Total FROM Carrinho";
+                    string query = "SELECT TipoDoce, Sabor, Quantidade, ValorUnitario, ValorTotal FROM Carrinho";
                     SqlDataAdapter da = new SqlDataAdapter(query, conn);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
-                    dgvCarrinho.DataSource = dt;
+                    dataGridView1.DataSource = dt;
                 }
             }
             catch (Exception ex)
@@ -82,7 +76,7 @@ namespace doceria
                     SqlDataAdapter da = new SqlDataAdapter(sql, conn);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
-                    dgvCarrinho.DataSource = dt;
+                    dataGridView1.DataSource = dt;
                 }
             }
             catch (Exception ex)
@@ -104,6 +98,11 @@ namespace doceria
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvCarrinho_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
         }

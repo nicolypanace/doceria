@@ -48,45 +48,39 @@ namespace doceria
 
         private void btcarrinho_Click(object sender, EventArgs e)
         {
-
+            PageCarrinho pageCarrinho = (PageCarrinho)sender;
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            if (!int.TryParse(txtQuantidade.Text.Trim(), out int quantidade) || quantidade <= 0)
+            string connectionString = @"Data Source=SQLexpress;Initial Catalog=CJ3027571PR2;User ID=aluno;Password=aluno";
+            if (cmbSabor.SelectedItem == null || string.IsNullOrEmpty(txtQuantidade.Text))
             {
-                MessageBox.Show("Informe uma quantidade válida de caixas.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Selecione o sabor e a quantidade!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-            // Dados para o banco
+            string doce = "brigadeiro";
             string sabor = cmbSabor.SelectedItem.ToString();
-            decimal precoCaixa = 10.00m;
-
-            // CONEXÃO COM O BANCO
-            string connectionString = @"Data Source=SQLexpress;Initial Catalog=CJ3027571PR2;User ID=aluno;Password=aluno;"; // Substitua por sua string real
+            int quantidades = int.Parse(txtQuantidade.Text);
+            decimal ValorUnitario = 10.00m;
 
             try
             {
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
-                    string sql = "INSERT INTO CarrinhoBrigadeiro (Sabor, QuantidadeCaixas, PrecoCaixa) VALUES (@sabor, @quantidade, @preco)";
+                    string query = "INSERT INTO Carrinho (TipoDoce, Sabor, Quantidade, ValorUnitario) " +
+                "VALUES (@TipoDoce, @Sabor, @Quantidade, @ValorUnitario)";
+                    SqlCommand cmd = new SqlCommand(query);
 
-                    using (SqlCommand cmd = new SqlCommand(sql, con))
-                    {
-                        cmd.Parameters.AddWithValue("@sabor", sabor);
-                        cmd.Parameters.AddWithValue("@quantidade", quantidade);
-                        cmd.Parameters.AddWithValue("@preco", precoCaixa);
+                    cmd.Parameters.AddWithValue("@TipoDoce", doce);
+                    cmd.Parameters.AddWithValue("@Sabor", sabor);
+                    cmd.Parameters.AddWithValue("@Quantidade", quantidades);
+                    cmd.Parameters.AddWithValue("@ValorUnitario", ValorUnitario);
 
-                        con.Open();
-                        cmd.ExecuteNonQuery();
-                    }
+                    cmd.ExecuteNonQuery();
                 }
+                MessageBox.Show($"{quantidades} caixa(s) de {sabor} foram adicionadas ao carrinho!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // Sucesso
-                MessageBox.Show($"{quantidade} caixa(s) de {sabor} foram adicionadas ao carrinho!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                // Limpa campos
                 cmbSabor.SelectedIndex = -1;
                 txtQuantidade.Clear();
             }
@@ -95,14 +89,6 @@ namespace doceria
                 MessageBox.Show("Erro ao adicionar ao carrinho:\n" + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void btnVerCarrinho_Click(object sender, EventArgs e) //visualiza o carrinho após adicionar
-        {
-            PageCarrinho pagecarrinho = new PageCarrinho();
-            pagecarrinho.Show();
-        }
     }
 }
-
-
 
