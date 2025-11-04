@@ -40,22 +40,22 @@
             this.carrinhoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.carrinhoTableAdapter1 = new doceria.CJ3027571PR2DataSet5TableAdapters.CarrinhoTableAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.cJ3027571PR2DataSet6 = new doceria.CJ3027571PR2DataSet6();
-            this.carrinhoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.carrinhoTableAdapter2 = new doceria.CJ3027571PR2DataSet6TableAdapters.CarrinhoTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoDoceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.saborDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valorUnitarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valorTotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.carrinhoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.cJ3027571PR2DataSet6 = new doceria.CJ3027571PR2DataSet6();
+            this.carrinhoTableAdapter2 = new doceria.CJ3027571PR2DataSet6TableAdapters.CarrinhoTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.carrinhoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cJ3027571PR2DataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cJ3027571PR2DataSet5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carrinhoBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cJ3027571PR2DataSet6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carrinhoBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cJ3027571PR2DataSet6)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -75,7 +75,7 @@
             this.btConfirmar.BackgroundImage = global::doceria.Properties.Resources.Design_sem_nome__1_;
             this.btConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btConfirmar.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btConfirmar.Location = new System.Drawing.Point(588, 365);
+            this.btConfirmar.Location = new System.Drawing.Point(625, 380);
             this.btConfirmar.Name = "btConfirmar";
             this.btConfirmar.Size = new System.Drawing.Size(150, 54);
             this.btConfirmar.TabIndex = 1;
@@ -88,7 +88,7 @@
             this.btVoltar.BackgroundImage = global::doceria.Properties.Resources.Design_sem_nome__1_;
             this.btVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btVoltar.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btVoltar.Location = new System.Drawing.Point(12, 396);
+            this.btVoltar.Location = new System.Drawing.Point(39, 411);
             this.btVoltar.Name = "btVoltar";
             this.btVoltar.Size = new System.Drawing.Size(71, 23);
             this.btVoltar.TabIndex = 2;
@@ -109,9 +109,11 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
+            this.lblTotal.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.Location = new System.Drawing.Point(98, 333);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(45, 13);
+            this.lblTotal.Size = new System.Drawing.Size(47, 16);
             this.lblTotal.TabIndex = 4;
             this.lblTotal.Text = "TOTAL:";
             this.lblTotal.Click += new System.EventHandler(this.lblTotal_Click);
@@ -152,20 +154,6 @@
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCarrinho_CellContentClick_1);
             // 
-            // cJ3027571PR2DataSet6
-            // 
-            this.cJ3027571PR2DataSet6.DataSetName = "CJ3027571PR2DataSet6";
-            this.cJ3027571PR2DataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // carrinhoBindingSource2
-            // 
-            this.carrinhoBindingSource2.DataMember = "Carrinho";
-            this.carrinhoBindingSource2.DataSource = this.cJ3027571PR2DataSet6;
-            // 
-            // carrinhoTableAdapter2
-            // 
-            this.carrinhoTableAdapter2.ClearBeforeFill = true;
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -204,6 +192,20 @@
             this.valorTotalDataGridViewTextBoxColumn.Name = "valorTotalDataGridViewTextBoxColumn";
             this.valorTotalDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // carrinhoBindingSource2
+            // 
+            this.carrinhoBindingSource2.DataMember = "Carrinho";
+            this.carrinhoBindingSource2.DataSource = this.cJ3027571PR2DataSet6;
+            // 
+            // cJ3027571PR2DataSet6
+            // 
+            this.cJ3027571PR2DataSet6.DataSetName = "CJ3027571PR2DataSet6";
+            this.cJ3027571PR2DataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // carrinhoTableAdapter2
+            // 
+            this.carrinhoTableAdapter2.ClearBeforeFill = true;
+            // 
             // PageCarrinho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -224,8 +226,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.cJ3027571PR2DataSet5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carrinhoBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cJ3027571PR2DataSet6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carrinhoBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cJ3027571PR2DataSet6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
