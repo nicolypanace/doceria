@@ -56,7 +56,6 @@ namespace doceria
                     cmd.Parameters.AddWithValue("@Quantidade", quantidade);
                     cmd.Parameters.AddWithValue("@ValorUnitario", ValorUnitario);
 
-
                     conn.Open();
                     cmd.ExecuteNonQuery();
                     conn.Close();
@@ -68,6 +67,12 @@ namespace doceria
             {
                 MessageBox.Show("Erro ao salvar no banco de dados: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            PageSelect pageSelect = new PageSelect();
+            pageSelect.ShowDialog();
         }
     }
 }

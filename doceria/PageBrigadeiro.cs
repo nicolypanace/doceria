@@ -59,35 +59,40 @@ namespace doceria
                 MessageBox.Show("Selecione o sabor e a quantidade!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            string doce = "brigadeiro";
+            string doce = "Brigadeiro";
             string sabor = cmbSabor.SelectedItem.ToString();
-            int quantidades = int.Parse(txtQuantidade.Text);
-            decimal ValorUnitario = 10.00m;
+            int quantidade = int.Parse(txtQuantidade.Text);
+            decimal ValorUnitario = 10.00m; // valor por caixa de brigadeiro
 
             try
             {
-                using (SqlConnection con = new SqlConnection(connectionString))
+                using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     string query = "INSERT INTO Carrinho (TipoDoce, Sabor, Quantidade, ValorUnitario) " +
-                "VALUES (@TipoDoce, @Sabor, @Quantidade, @ValorUnitario)";
-                    SqlCommand cmd = new SqlCommand(query);
+               "VALUES (@TipoDoce, @Sabor, @Quantidade, @ValorUnitario)";
+                    SqlCommand cmd = new SqlCommand(query, conn);
 
                     cmd.Parameters.AddWithValue("@TipoDoce", doce);
                     cmd.Parameters.AddWithValue("@Sabor", sabor);
-                    cmd.Parameters.AddWithValue("@Quantidade", quantidades);
+                    cmd.Parameters.AddWithValue("@Quantidade", quantidade);
                     cmd.Parameters.AddWithValue("@ValorUnitario", ValorUnitario);
 
+                    conn.Open();
                     cmd.ExecuteNonQuery();
+                    conn.Close();
                 }
-                MessageBox.Show($"{quantidades} caixa(s) de {sabor} foram adicionadas ao carrinho!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                cmbSabor.SelectedIndex = -1;
-                txtQuantidade.Clear();
+                MessageBox.Show("Item adicionado ao carrinho com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao adicionar ao carrinho:\n" + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            PageSelect pageSelect = new PageSelect();
+            pageSelect.ShowDialog();
         }
     }
 }

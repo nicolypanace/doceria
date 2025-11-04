@@ -58,6 +58,7 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.btnAdicionar = new System.Windows.Forms.Button();
+            this.voltar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -410,12 +411,26 @@
             this.btnAdicionar.UseVisualStyleBackColor = true;
             this.btnAdicionar.Click += new System.EventHandler(this.button1_Click);
             // 
+            // voltar
+            // 
+            this.voltar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.voltar.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.voltar.Image = global::doceria.Properties.Resources.Design_sem_nome__1_;
+            this.voltar.Location = new System.Drawing.Point(719, 12);
+            this.voltar.Name = "voltar";
+            this.voltar.Size = new System.Drawing.Size(69, 24);
+            this.voltar.TabIndex = 50;
+            this.voltar.Text = "voltar";
+            this.voltar.UseVisualStyleBackColor = true;
+            this.voltar.Click += new System.EventHandler(this.voltar_Click);
+            // 
             // PageBolos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::doceria.Properties.Resources.Design_sem_nome;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.voltar);
             this.Controls.Add(this.btnAdicionar);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -491,5 +506,6 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button btnAdicionar;
+        private System.Windows.Forms.Button voltar;
     }
 }

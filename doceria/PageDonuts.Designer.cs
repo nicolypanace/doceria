@@ -47,6 +47,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.voltar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -258,12 +259,26 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // voltar
+            // 
+            this.voltar.BackgroundImage = global::doceria.Properties.Resources.Design_sem_nome__1_;
+            this.voltar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.voltar.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.voltar.Location = new System.Drawing.Point(721, 12);
+            this.voltar.Name = "voltar";
+            this.voltar.Size = new System.Drawing.Size(67, 23);
+            this.voltar.TabIndex = 19;
+            this.voltar.Text = "voltar";
+            this.voltar.UseVisualStyleBackColor = true;
+            this.voltar.Click += new System.EventHandler(this.button3_Click);
+            // 
             // PageDonuts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::doceria.Properties.Resources.Design_sem_nome;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.voltar);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.button1);
@@ -315,5 +330,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button voltar;
     }
 }
