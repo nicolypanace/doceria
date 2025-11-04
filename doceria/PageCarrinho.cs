@@ -99,12 +99,13 @@ namespace doceria
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void dgvCarrinho_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-
+            PagePagamento pagePagamento = new PagePagamento();
+            pagePagamento.Show();
         }
     }
 }

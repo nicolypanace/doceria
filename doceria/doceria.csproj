@@ -131,6 +131,12 @@
     <Compile Include="PageLogin.Designer.cs">
       <DependentUpon>PageLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="PagePagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PagePagamento.Designer.cs">
+      <DependentUpon>PagePagamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="PageSelect.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PageLogin.resx">
       <DependentUpon>PageLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PagePagamento.resx">
+      <DependentUpon>PagePagamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PageSelect.resx">
       <DependentUpon>PageSelect.cs</DependentUpon>
