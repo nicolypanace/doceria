@@ -29,15 +29,11 @@
         private void InitializeComponent()
         {
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.btsenha = new System.Windows.Forms.TextBox();
             this.btemail = new System.Windows.Forms.TextBox();
             this.btnome = new System.Windows.Forms.TextBox();
             this.bttelefone = new System.Windows.Forms.MaskedTextBox();
-            this.bttdata = new System.Windows.Forms.MaskedTextBox();
-            this.bttcpf = new System.Windows.Forms.MaskedTextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btConcluir = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,17 +51,6 @@
             this.label6.Size = new System.Drawing.Size(74, 19);
             this.label6.TabIndex = 27;
             this.label6.Text = "TELEFONE";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(588, 253);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(34, 19);
-            this.label5.TabIndex = 25;
-            this.label5.Text = "CPF";
             // 
             // btsenha
             // 
@@ -96,22 +81,6 @@
             this.bttelefone.Size = new System.Drawing.Size(107, 20);
             this.bttelefone.TabIndex = 21;
             // 
-            // bttdata
-            // 
-            this.bttdata.Location = new System.Drawing.Point(59, 275);
-            this.bttdata.Mask = "00/00/0000";
-            this.bttdata.Name = "bttdata";
-            this.bttdata.Size = new System.Drawing.Size(64, 20);
-            this.bttdata.TabIndex = 20;
-            // 
-            // bttcpf
-            // 
-            this.bttcpf.Location = new System.Drawing.Point(592, 275);
-            this.bttcpf.Mask = "000,000,000-00";
-            this.bttcpf.Name = "bttcpf";
-            this.bttcpf.Size = new System.Drawing.Size(90, 20);
-            this.bttcpf.TabIndex = 19;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -122,17 +91,6 @@
             this.label4.Size = new System.Drawing.Size(51, 19);
             this.label4.TabIndex = 18;
             this.label4.Text = "NOME";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(55, 253);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(164, 19);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "DATA DE NASCIMENTO";
             // 
             // label2
             // 
@@ -189,15 +147,11 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btConcluir);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.btsenha);
             this.Controls.Add(this.btemail);
             this.Controls.Add(this.btnome);
             this.Controls.Add(this.bttelefone);
-            this.Controls.Add(this.bttdata);
-            this.Controls.Add(this.bttcpf);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox2);
@@ -214,15 +168,11 @@
 
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btConcluir;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox btsenha;
         private System.Windows.Forms.TextBox btemail;
         private System.Windows.Forms.TextBox btnome;
         private System.Windows.Forms.MaskedTextBox bttelefone;
-        private System.Windows.Forms.MaskedTextBox bttdata;
-        private System.Windows.Forms.MaskedTextBox bttcpf;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
