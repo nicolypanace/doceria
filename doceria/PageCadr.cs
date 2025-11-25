@@ -23,10 +23,7 @@ namespace doceria
             string nome = btnome.Text;
             string email = btemail.Text;
             string telefone = bttelefone.Text;
-            string data = bttdata.Text;
-            string cpf = bttcpf.Text;
             string senha = btsenha.Text;
-
             string conexaoString = "Server=SQLexpress;Database=CJ3027571PR2;User Id=aluno;Password=aluno;";
             string query = "INSERT INTO USUARIO VALUES (@nome,@cpf, @telefone, @data, @email, @senha)";
 
@@ -41,15 +38,12 @@ namespace doceria
                     {
                         comando.Parameters.AddWithValue("@nome", nome);
                         comando.Parameters.AddWithValue("@email", email);
-                        comando.Parameters.AddWithValue("@cpf", cpf);
                         comando.Parameters.AddWithValue("@telefone", telefone);
-                        comando.Parameters.AddWithValue("@data", data);
                         comando.Parameters.AddWithValue("@senha", senha);
 
                         comando.ExecuteNonQuery();
                         if (string.IsNullOrWhiteSpace(nome) ||
                             string.IsNullOrWhiteSpace(email) ||
-                            string.IsNullOrWhiteSpace(cpf) ||
                             string.IsNullOrWhiteSpace(telefone) ||
                             string.IsNullOrWhiteSpace(senha))
                         {
@@ -68,8 +62,6 @@ namespace doceria
             btnome.Clear();
             btemail.Clear();
             bttelefone.Clear();
-            bttcpf.Clear();
-            bttdata.Clear();
             btsenha.Clear();
 
             PageSelect pageSelect = new PageSelect();
