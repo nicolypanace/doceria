@@ -99,7 +99,8 @@ namespace doceria
 
         private void button1_Click(object sender, EventArgs e)
         {
-      
+            FormEndereco endereco = new FormEndereco();
+            endereco.Show();
         }
 
         private void dgvCarrinho_CellContentClick_1(object sender, DataGridViewCellEventArgs e)

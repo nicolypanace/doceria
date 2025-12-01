@@ -15,7 +15,7 @@ namespace doceria
     {
         string conexaoString = "Server=SQLexpress;Database=CJ3027571PR2;User Id=aluno;Password=aluno;";
         // Removido ID externo — agora o formulário salva diretamente no banco
-        private int? _clienteId = null;
+        private int? usuario = null;
 
 
         public FormEndereco(int? clienteId = null)
@@ -44,7 +44,7 @@ namespace doceria
                 {
                     conn.Open();
 
-                    string query = "INSERT INTO Clientes (Endereco) VALUES (@Endereco)";
+                    string query = "INSERT INTO Usuario (Endereco) VALUES (@Endereco)";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
@@ -55,6 +55,8 @@ namespace doceria
 
                 MessageBox.Show("Endereço salvo com sucesso!");
                 txtEndereco.Clear();
+
+                PagePagamento pagePagamento = new PagePagamento();
             }
             catch (Exception ex)
             {
@@ -65,6 +67,11 @@ namespace doceria
         private void txtEndereco_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            PageCarrinho pageCarrinho = new PageCarrinho();
         }
     }
 }
