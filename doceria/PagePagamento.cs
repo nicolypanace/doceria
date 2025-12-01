@@ -15,7 +15,7 @@ namespace doceria
         public PagePagamento(TextBox txtValidade = null)
         {
             InitializeComponent();
-            this.TxtValidade = txtValidade;
+         
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -29,12 +29,6 @@ namespace doceria
 			if (txtNumero.Text.Length < 16)
 			{
 				MessageBox.Show("Número do cartão inválido.");
-				return;
-			}
-
-			if (!TxtValidade.Text.Contains("/"))
-			{
-				MessageBox.Show("A validade deve estar no formato MM/AA.");
 				return;
 			}
 
