@@ -125,9 +125,6 @@ namespace doceria
 				MessageBox.Show("Digite um salário válido!");
 				return;
 			}
-           
-
-            this.funcionariosTableAdapter.UpdateSalario(novoSalario, idSelecionado);
 
 
             MessageBox.Show("Salário atualizado com sucesso!");
