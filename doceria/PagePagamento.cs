@@ -12,9 +12,10 @@ namespace doceria
 {
     public partial class PagePagamento : Form
     {
-        public PagePagamento()
+        public PagePagamento(TextBox txtValidade = null)
         {
             InitializeComponent();
+            this.TxtValidade = txtValidade;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -31,7 +32,7 @@ namespace doceria
 				return;
 			}
 
-			if (!txtValidade.Text.Contains("/"))
+			if (!TxtValidade.Text.Contains("/"))
 			{
 				MessageBox.Show("A validade deve estar no formato MM/AA.");
 				return;
