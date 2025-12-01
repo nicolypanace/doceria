@@ -88,6 +88,7 @@
             this.Controls.Add(this.txtEndereco);
             this.Controls.Add(this.btnSalvar);
             this.Name = "FormEndereco";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormEndereco";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
