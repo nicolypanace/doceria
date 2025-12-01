@@ -55,8 +55,9 @@ namespace doceria
 
                 MessageBox.Show("Endereço salvo com sucesso!");
                 txtEndereco.Clear();
-
+                 
                 PagePagamento pagePagamento = new PagePagamento();
+                pagePagamento.Show();
             }
             catch (Exception ex)
             {
