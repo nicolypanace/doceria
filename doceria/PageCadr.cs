@@ -72,5 +72,11 @@ namespace doceria
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            PageComeco pageComeco = new PageComeco();
+            pageComeco.ShowDialog();
+        }
     }
 }

@@ -64,5 +64,11 @@ namespace doceria
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+        PageSelect pageSelect = new PageSelect();
+			pageSelect.Show();
+        }
     }
 }

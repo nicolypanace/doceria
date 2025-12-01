@@ -34,6 +34,7 @@
             this.btsenha = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.senhaenter = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,12 +101,27 @@
             this.senhaenter.Text = "SENHA";
             this.senhaenter.Click += new System.EventHandler(this.label3_Click);
             // 
+            // button1
+            // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::doceria.Properties.Resources.Design_sem_nome__1_;
+            this.button1.Location = new System.Drawing.Point(34, 16);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(78, 27);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "voltar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // PageLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::doceria.Properties.Resources.Design_sem_nome;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.senhaenter);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btsenha);
@@ -130,5 +146,6 @@
         private System.Windows.Forms.TextBox btsenha;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label senhaenter;
+        private System.Windows.Forms.Button button1;
     }
 }

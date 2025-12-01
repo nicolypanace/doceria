@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -82,17 +85,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CJ3027571PR2DataSet6.xsd</DependentUpon>
     </Compile>
-    <Compile Include="endereco.cs">
+    <Compile Include="FormEndereco.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="endereco.Designer.cs">
-      <DependentUpon>endereco.cs</DependentUpon>
-    </Compile>
-    <Compile Include="endereço.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="endereço.Designer.cs">
-      <DependentUpon>endereço.cs</DependentUpon>
+    <Compile Include="FormEndereco.Designer.cs">
+      <DependentUpon>FormEndereco.cs</DependentUpon>
     </Compile>
     <Compile Include="PageComeco.cs">
       <SubType>Form</SubType>
@@ -169,11 +166,8 @@
     <Compile Include="RegistroFuncionarios.Designer.cs">
       <DependentUpon>RegistroFuncionarios.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="endereco.resx">
-      <DependentUpon>endereco.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="endereço.resx">
-      <DependentUpon>endereço.cs</DependentUpon>
+    <EmbeddedResource Include="FormEndereco.resx">
+      <DependentUpon>FormEndereco.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PageComeco.resx">
       <DependentUpon>PageComeco.cs</DependentUpon>
@@ -298,6 +292,7 @@
     <None Include="CJ3027571PR2DataSet6.xss">
       <DependentUpon>CJ3027571PR2DataSet6.xsd</DependentUpon>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
