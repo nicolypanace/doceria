@@ -58,6 +58,9 @@ namespace doceria
 				lblStatus.ForeColor = System.Drawing.Color.Green;
 			};
 			timer.Start();
+
+			PageSelect pageSelect = new PageSelect();
+			pageSelect.Show();
 		}
 
         private void label7_Click(object sender, EventArgs e)
