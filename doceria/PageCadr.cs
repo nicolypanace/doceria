@@ -24,8 +24,9 @@ namespace doceria
             string email = btemail.Text;
             string telefone = bttelefone.Text;
             string senha = btsenha.Text;
+            string tipousuario = "cliente";
             string conexaoString = "Server=SQLexpress;Database=CJ3027571PR2;User Id=aluno;Password=aluno;";
-            string query = "INSERT INTO USUARIO VALUES (@nome,@cpf, @telefone, @data, @email, @senha)";
+            string query = "INSERT INTO USUARIO VALUES (@nome,@cpf, @telefone, @data, @email, @senha, @TipoUsuario)";
 
 
             try
@@ -40,6 +41,7 @@ namespace doceria
                         comando.Parameters.AddWithValue("@email", email);
                         comando.Parameters.AddWithValue("@telefone", telefone);
                         comando.Parameters.AddWithValue("@senha", senha);
+                        comando.Parameters.AddWithValue("TipoUsuario", tipousuario);
 
                         comando.ExecuteNonQuery();
                         if (string.IsNullOrWhiteSpace(nome) ||

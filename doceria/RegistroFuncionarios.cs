@@ -45,6 +45,7 @@ namespace doceria
 			string nome = txtNome.Text.Trim();
 			string cargo = txtCargo.Text.Trim();
 			string salarioTexto = txtSalario.Text.Trim();
+			string usuario = "funcionario";
 
 			if (string.IsNullOrEmpty(nome) || string.IsNullOrEmpty(cargo) || string.IsNullOrEmpty(salarioTexto))
 			{
@@ -65,6 +66,7 @@ namespace doceria
 				cmd.Parameters.AddWithValue("@Nome", nome);
 				cmd.Parameters.AddWithValue("@Cargo", cargo);
 				cmd.Parameters.AddWithValue("@Salario", salario);
+				cmd.Parameters.AddWithValue("@TipoUsuario", usuario);
 
 				try
 				{

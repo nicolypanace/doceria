@@ -19,7 +19,7 @@ namespace doceria
         public PageGestor()
         {
             InitializeComponent();
-           
+
             conexao = new SqlConnection(strCon);
         }
 
@@ -27,53 +27,75 @@ namespace doceria
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string user = txtUsuario.Text;
-            string pass = txtSenha.Text;
+            string usuario = txtUsuario.Text;
+            string senha = txtSenha.Text;
 
-            using (SqlConnection con = new SqlConnection("SUA CONNECTION STRING"))
+            // -------------------------------------------
+            // 1. GESTOR CRIADOR (LOGIN SUPERUSER)
+            // -------------------------------------------
+            if (usuario == "gestor" && senha == "123")
             {
-                con.Open();
+                MessageBox.Show("Bem-vindo, gestor!");
+                new RegistroFuncionarios().Show();  // Página do gestor
+                this.Hide();
+                return;
+            }
 
-                string sql = "SELECT Nome, TipoUsuario FROM Usuarios WHERE Nome=@u AND Senha=@s";
-
-                using (SqlCommand cmd = new SqlCommand(sql, con))
+            // -------------------------------------------
+            // 2. LOGIN NORMAL (BANCO DE DADOS)
+            // -------------------------------------------
+            try
+            {
+                using (SqlConnection con = Conexao.Conectar())
                 {
-                    cmd.Parameters.AddWithValue("@u", user);
-                    cmd.Parameters.AddWithValue("@s", pass);
+                    string sql = @"SELECT Nome, Cargo 
+                           FROM Funcionarios 
+                           WHERE Usuario = @usuario AND Senha = @senha";
 
+                    SqlCommand cmd = new SqlCommand(sql, con);
+
+                    cmd.Parameters.AddWithValue("@usuario", usuario);
+                    cmd.Parameters.AddWithValue("@senha", senha);
+
+                    con.Open();
                     SqlDataReader dr = cmd.ExecuteReader();
 
                     if (dr.Read())
                     {
-                        Sessao.NomeUsuario = dr["Nome"].ToString();
-                        Sessao.TipoUsuario = dr["TipoUsuario"].ToString();
+                        string nome = dr["Nome"].ToString();
+                        string cargo = dr["Cargo"].ToString();
 
-                        // Abrir página de produtos ou painel gestor
-                        if (Sessao.TipoUsuario == "Gestor")
+                        MessageBox.Show("Bem-vindo, " + nome + "!");
+
+                        if (cargo == "Gestor")
                         {
-                            PageGestor tela = new PageGestor(); // sua página principal do gestor
-                            tela.Show();
+                            new RegistroFuncionarios().Show();
                         }
-                        else if (Sessao.TipoUsuario == "Funcionario")
+                        else
                         {
-                            PrecosProdutos tela = new PrecosProdutos(); // página onde funcionários podem editar produtos
-                            tela.Show();
+                            new PrecosProdutos().Show();
                         }
 
                         this.Hide();
                     }
                     else
                     {
-                        MessageBox.Show("Usuário ou senha incorretos!");
+                        MessageBox.Show("Usuário ou senha incorretos.");
                     }
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message);
+            }
         }
+
+
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             PageComeco pageComeco = new PageComeco();
-            pageComeco.ShowDialog();  
+            pageComeco.ShowDialog();
         }
 
         private void txtUsuario_TextChanged(object sender, EventArgs e)
@@ -81,6 +103,6 @@ namespace doceria
 
         }
     }
-    }
+}
     
 

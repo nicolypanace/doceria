@@ -85,12 +85,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CJ3027571PR2DataSet6.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Conexao.cs" />
     <Compile Include="FormEndereco.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormEndereco.Designer.cs">
       <DependentUpon>FormEndereco.cs</DependentUpon>
     </Compile>
+    <Compile Include="Funcionario.cs" />
     <Compile Include="PageComeco.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +168,7 @@
     <Compile Include="RegistroFuncionarios.Designer.cs">
       <DependentUpon>RegistroFuncionarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Repositorio.cs" />
     <Compile Include="Sessao.cs" />
     <EmbeddedResource Include="FormEndereco.resx">
       <DependentUpon>FormEndereco.cs</DependentUpon>
