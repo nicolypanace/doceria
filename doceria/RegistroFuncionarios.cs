@@ -105,13 +105,13 @@ namespace doceria
             if (e.RowIndex < 0) return;
 
             DataGridViewRow row = dgvDados.Rows[e.RowIndex];
+            txtNome.Text = row.Cells[1].Value?.ToString();
+            txtCargo.Text = row.Cells[2].Value?.ToString();
+            txtSalario.Text = row.Cells[3].Value?.ToString();
 
-            txtNome.Text = row.Cells["Nome"].Value.ToString();
-            txtCargo.Text = row.Cells["Cargo"].Value.ToString();
-            txtSalario.Text = row.Cells["Salario"].Value.ToString();
         }
 
-		private void editar_Click(object sender, EventArgs e)
+        private void editar_Click(object sender, EventArgs e)
 		{
             if (string.IsNullOrWhiteSpace(txtNome.Text))
             {
