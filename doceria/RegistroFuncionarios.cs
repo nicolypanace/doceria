@@ -19,8 +19,8 @@ namespace doceria
 		string strCon = "Data Source=SQLexpress;Initial Catalog=CJ3027571PR2;User ID=aluno;Password=aluno;";
 		private DataTable dtFuncionarios;
 		private int selectedId = -1;
-        int idSelecionado = -1;
-        public RegistroFuncionarios()
+		int idSelecionado = -1;
+		public RegistroFuncionarios()
 		{
 			this.Load += RegistroFuncionarios_Load;
 			InitializeComponent();
@@ -60,7 +60,7 @@ namespace doceria
 
 			using (SqlConnection conn = new SqlConnection(strCon))
 			{
-				string query = "INSERT INTO Funcionarios (Nome, Cargo, Salario) VALUES (@Nome, @Cargo, @Salario)";
+				string query = "INSERT INTO Funcionario (Nome, Cargo, Salario) VALUES (@Nome, @Cargo, @Salario)";
 				SqlCommand cmd = new SqlCommand(query, conn);
 				cmd.Parameters.AddWithValue("@Nome", nome);
 				cmd.Parameters.AddWithValue("@Cargo", cargo);
@@ -99,38 +99,53 @@ namespace doceria
 				}
 			}
 		}
-        private void dgvDados_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = dgvDados.Rows[e.RowIndex];
+		private void dgvDados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
 
-                idSelecionado = Convert.ToInt32(row.Cells["Id"].Value);
-                txtNome.Text = row.Cells["Nome"].Value.ToString();
-                txtCargo.Text = row.Cells["Cargo"].Value.ToString();
-                txtSalario.Text = row.Cells["Salario"].Value.ToString();
-            }
+            if (e.RowIndex < 0) return;
+
+            DataGridViewRow row = dgvDados.Rows[e.RowIndex];
+
+            txtNome.Text = row.Cells["Nome"].Value.ToString();
+            txtCargo.Text = row.Cells["Cargo"].Value.ToString();
+            txtSalario.Text = row.Cells["Salario"].Value.ToString();
         }
 
-        private void editar_Click(object sender, EventArgs e)
-        {
-            if (idSelecionado == -1)
+		private void editar_Click(object sender, EventArgs e)
+		{
+            if (string.IsNullOrWhiteSpace(txtNome.Text))
             {
-                MessageBox.Show("Selecione um funcionário na tabela.");
+                MessageBox.Show("Selecione um funcionário antes de editar!");
                 return;
             }
 
-			if (!decimal.TryParse(txtSalario.Text, out decimal novoSalario))
-			{
-				MessageBox.Show("Digite um salário válido!");
-				return;
-			}
+            try
+            {
+                using (SqlConnection con = new SqlConnection(strCon))
+                {
+                    SqlCommand cmd = new SqlCommand("AtualizarFuncionarioPorNome", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
 
+                    cmd.Parameters.AddWithValue("@Nome", txtNome.Text);
+                    cmd.Parameters.AddWithValue("@Cargo", txtCargo.Text);
+                    cmd.Parameters.AddWithValue("@Salario",
+                        decimal.Parse(txtSalario.Text, new CultureInfo("pt-BR")));
 
-            MessageBox.Show("Salário atualizado com sucesso!");
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                }
 
-            this.funcionariosTableAdapter.Fill(this.cJ3027571PR2DataSet1.Funcionarios);
+                MessageBox.Show("Funcionário editado com sucesso!");
+                CarregarDados();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message);
+            }
         }
+    
+          
+
         private void Nome_Click(object sender, EventArgs e)
 		{
 
@@ -139,6 +154,12 @@ namespace doceria
 		private void txtSalario_TextChanged(object sender, EventArgs e)
 		{
 
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			PrecosProdutos precosProdutos = new PrecosProdutos();
+			precosProdutos.Show();
 		}
 	}
 }

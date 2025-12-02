@@ -49,6 +49,7 @@
             this.carrinhoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.cJ3027571PR2DataSet6 = new doceria.CJ3027571PR2DataSet6();
             this.carrinhoTableAdapter2 = new doceria.CJ3027571PR2DataSet6TableAdapters.CarrinhoTableAdapter();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.carrinhoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cJ3027571PR2DataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cJ3027571PR2DataSet5)).BeginInit();
@@ -206,12 +207,26 @@
             // 
             this.carrinhoTableAdapter2.ClearBeforeFill = true;
             // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::doceria.Properties.Resources.Design_sem_nome__1_;
+            this.button1.Location = new System.Drawing.Point(15, 14);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(74, 27);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "sair";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // PageCarrinho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::doceria.Properties.Resources.Design_sem_nome;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.btVoltar);
@@ -255,5 +270,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn quantidadeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn valorUnitarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn valorTotalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button button1;
     }
 }
