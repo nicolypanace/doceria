@@ -48,6 +48,8 @@
             this.cJ3027571PR2DataSet1 = new doceria.CJ3027571PR2DataSet1();
             this.funcionariosTableAdapter = new doceria.CJ3027571PR2DataSet1TableAdapters.FuncionariosTableAdapter();
             this.editar = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.funcionariosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cJ3027571PR2DataSet1)).BeginInit();
@@ -58,7 +60,7 @@
             this.Nome.AutoSize = true;
             this.Nome.BackColor = System.Drawing.Color.Transparent;
             this.Nome.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Nome.Location = new System.Drawing.Point(210, 256);
+            this.Nome.Location = new System.Drawing.Point(210, 236);
             this.Nome.Name = "Nome";
             this.Nome.Size = new System.Drawing.Size(50, 19);
             this.Nome.TabIndex = 0;
@@ -70,7 +72,7 @@
             this.Salário.AutoSize = true;
             this.Salário.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Salário.Image = global::doceria.Properties.Resources.Logotipo_Doceria_Minimalista_Marrom_e_Rosa;
-            this.Salário.Location = new System.Drawing.Point(210, 334);
+            this.Salário.Location = new System.Drawing.Point(204, 295);
             this.Salário.Name = "Salário";
             this.Salário.Size = new System.Drawing.Size(56, 19);
             this.Salário.TabIndex = 1;
@@ -81,7 +83,7 @@
             this.Cargo.AutoSize = true;
             this.Cargo.BackColor = System.Drawing.Color.Transparent;
             this.Cargo.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cargo.Location = new System.Drawing.Point(210, 295);
+            this.Cargo.Location = new System.Drawing.Point(210, 265);
             this.Cargo.Name = "Cargo";
             this.Cargo.Size = new System.Drawing.Size(50, 19);
             this.Cargo.TabIndex = 2;
@@ -89,21 +91,21 @@
             // 
             // txtCargo
             // 
-            this.txtCargo.Location = new System.Drawing.Point(266, 296);
+            this.txtCargo.Location = new System.Drawing.Point(266, 266);
             this.txtCargo.Name = "txtCargo";
             this.txtCargo.Size = new System.Drawing.Size(259, 20);
             this.txtCargo.TabIndex = 3;
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(266, 257);
+            this.txtNome.Location = new System.Drawing.Point(266, 237);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(259, 20);
             this.txtNome.TabIndex = 4;
             // 
             // txtSalario
             // 
-            this.txtSalario.Location = new System.Drawing.Point(266, 333);
+            this.txtSalario.Location = new System.Drawing.Point(266, 296);
             this.txtSalario.Name = "txtSalario";
             this.txtSalario.Size = new System.Drawing.Size(109, 20);
             this.txtSalario.TabIndex = 5;
@@ -218,7 +220,7 @@
             this.editar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.editar.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editar.Image = global::doceria.Properties.Resources.Design_sem_nome__1_;
-            this.editar.Location = new System.Drawing.Point(395, 330);
+            this.editar.Location = new System.Drawing.Point(390, 309);
             this.editar.Name = "editar";
             this.editar.Size = new System.Drawing.Size(65, 26);
             this.editar.TabIndex = 13;
@@ -226,12 +228,32 @@
             this.editar.UseVisualStyleBackColor = true;
             this.editar.Click += new System.EventHandler(this.editar_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(204, 331);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 19);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Senha:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(263, 331);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(110, 20);
+            this.textBox1.TabIndex = 15;
+            // 
             // RegistroFuncionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::doceria.Properties.Resources.Design_sem_nome;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.editar);
             this.Controls.Add(this.dgvDados);
             this.Controls.Add(this.label2);
@@ -277,5 +299,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cargoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn salarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button editar;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
