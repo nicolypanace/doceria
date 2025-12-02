@@ -61,7 +61,7 @@ namespace doceria
 
 			using (SqlConnection conn = new SqlConnection(strCon))
 			{
-				string query = "INSERT INTO Funcionario (Nome, Cargo, Salario) VALUES (@Nome, @Cargo, @Salario)";
+				string query = "INSERT INTO Funcionarios (Nome, Cargo, Salario) VALUES (@Nome, @Cargo, @Salario)";
 				SqlCommand cmd = new SqlCommand(query, conn);
 				cmd.Parameters.AddWithValue("@Nome", nome);
 				cmd.Parameters.AddWithValue("@Cargo", cargo);
@@ -129,7 +129,7 @@ namespace doceria
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.AddWithValue("@Nome", txtNome.Text);
-                    cmd.Parameters.AddWithValue("@Cargo", txtCargo.Text);
+                    cmd.Parameters.AddWithValue("@TipoUsuario", txtCargo.Text);
                     cmd.Parameters.AddWithValue("@Salario",
                         decimal.Parse(txtSalario.Text, new CultureInfo("pt-BR")));
 
@@ -163,5 +163,10 @@ namespace doceria
 			PrecosProdutos precosProdutos = new PrecosProdutos();
 			precosProdutos.Show();
 		}
-	}
+
+        private void txtCargo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

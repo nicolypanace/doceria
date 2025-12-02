@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using doceria; // MUITO IMPORTANTE
 namespace doceria
 {
     public partial class PageGestor : Form
@@ -24,70 +24,55 @@ namespace doceria
         }
 
         public string connectionString { get; private set; }
-
+        
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string usuario = txtUsuario.Text;
-            string senha = txtSenha.Text;
+            string sql = "SELECT Nome, TipoUsuario FROM usuario WHERE TipoUsuario = @TipoUsuario AND Senha = @Senha";
 
-            // -------------------------------------------
-            // 1. GESTOR CRIADOR (LOGIN SUPERUSER)
-            // -------------------------------------------
-            if (usuario == "gestor" && senha == "123")
-            {
-                MessageBox.Show("Bem-vindo, gestor!");
-                new RegistroFuncionarios().Show();  // Página do gestor
-                this.Hide();
-                return;
-            }
+            string tipoUsuario = "gestor";
+            string senha = "123";
 
-            // -------------------------------------------
-            // 2. LOGIN NORMAL (BANCO DE DADOS)
-            // -------------------------------------------
+            SqlCommand cmd = new SqlCommand(sql, conexao); // <-- aqui está a correção
+
+            cmd.Parameters.AddWithValue("@TipoUsuario", tipoUsuario);
+            cmd.Parameters.AddWithValue("@Senha", senha);
+
             try
             {
-                using (SqlConnection con = Conexao.Conectar())
+                conexao.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.Read())
                 {
-                    string sql = @"SELECT Nome, Cargo 
-                           FROM Funcionarios 
-                           WHERE Usuario = @usuario AND Senha = @senha";
+                    string nome = dr["Nome"].ToString();
+                    string cargo = dr["TipoUsuario"].ToString();
 
-                    SqlCommand cmd = new SqlCommand(sql, con);
+                    MessageBox.Show("Bem-vindo, " + nome + "!");
+                    RegistroFuncionarios registroFuncionarios = new RegistroFuncionarios();
+                    registroFuncionarios.Show();
 
-                    cmd.Parameters.AddWithValue("@usuario", usuario);
-                    cmd.Parameters.AddWithValue("@senha", senha);
-
-                    con.Open();
-                    SqlDataReader dr = cmd.ExecuteReader();
-
-                    if (dr.Read())
+                    if (cargo == "Gestor")
                     {
-                        string nome = dr["Nome"].ToString();
-                        string cargo = dr["Cargo"].ToString();
-
-                        MessageBox.Show("Bem-vindo, " + nome + "!");
-
-                        if (cargo == "Gestor")
-                        {
-                            new RegistroFuncionarios().Show();
-                        }
-                        else
-                        {
-                            new PrecosProdutos().Show();
-                        }
-
-                        this.Hide();
+                        new RegistroFuncionarios().Show();
                     }
                     else
                     {
-                        MessageBox.Show("Usuário ou senha incorretos.");
+                     
                     }
+                   
                 }
+                else
+                {
+                    MessageBox.Show("Usuário ou senha incorretos");
+                }
+
+                conexao.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro: " + ex.Message);
             }
+         
         }
 
 
